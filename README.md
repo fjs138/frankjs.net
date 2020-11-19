@@ -11,6 +11,21 @@ Fully recreated blog, transitioning from a WordPress site to React, utilizing Ga
 _Check out the old site here:click me!(https://www.builtbyfrank.com/blog)._
 
 ## 🚀 Quick start
+initially i developed this to draw data from markdown formatted blog posts
+i then created a second branch so that i could developer a version that uses a headless cms, and implements CI/CD.
+gatsby-source-filesystem
+gatsby-plugin-sass
+gatsby-transformer-remark Parses Markdown files using Remark.
+
+convert markdown to html
+logrocket
+css
+js
+react
+gatsby
+graphql
+markdown
+contentful
 
 1.  **Create a Gatsby site.**
 

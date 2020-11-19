@@ -1,6 +1,8 @@
 import React from "react"
 import { Link } from "gatsby"
 import Layout from "../components/layout"
+import LogRocket from 'logrocket';
+LogRocket.init('vvy5uo/test');
 
 export default function IndexPage() {
   return (
