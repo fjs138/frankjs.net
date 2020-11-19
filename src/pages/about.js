@@ -1,19 +1,15 @@
 import React from "react"
 import { Link } from "gatsby"
-import Footer from "../components/footer"
-import Header from "../components/header"
+import Layout from "../components/layout"
 
 export default function AboutPage() {
   return (
-    <div>
-      < Header />
-      <h1>Blog Page</h1>
-      <h2>Posts will show up here later</h2>
-      <p>
-        Want to work with me? Reach out:<Link to="/contact">Contact me.</Link>
-      </p>
-      < Footer />
-
-    </div>
+    <Layout>
+        <h1>About Page</h1>
+        <h2>I'm pretty cool.</h2>
+        <p>
+          Want to work with me? Reach out:<Link to="/contact">Contact me.</Link>
+        </p>
+    </Layout>
   )
 }
