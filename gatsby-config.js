@@ -9,4 +9,8 @@ module.exports = {
   plugins: [
     'gatsby-plugin-sass'
   ],
+  siteMetadata: {
+    title: 'Frank Joseph Santaguida',
+    author: 'Frank J Santaguida',
+  }
 }

@@ -1,14 +1,20 @@
 import React from "react"
-import { Link } from "gatsby"
+import { Link, graphql, useStaticQuery } from "gatsby"
+
+
 // import "./header.module.scss"
 import headerStyles from "./header.module.scss"
 
 export default function Header() {
+  // data from gql api
+  const data = useStaticQuery(graphql`
+    query {site{siteMetadata{title}}}
+  `) // tagged template literal
   return (
     <header className={headerStyles.header}>
       <h1>
         <Link className={headerStyles.title} to="/">
-          Frank Santaguida
+          {data.site.siteMetadata.title}
         </Link>
       </h1>
       <nav>
