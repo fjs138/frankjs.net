@@ -24,3 +24,7 @@ export default function BlogPage() {
     </Layout>
   )
 }
+
+// generate slug for each post  gatsby.md -> gatsby -> /blog/gatsby
+// generate blog post page template
+// generate new page for each post
