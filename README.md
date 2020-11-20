@@ -27,7 +27,11 @@ react
 gatsby
 graphql
 markdown
+
 contentful
+momentjs time formatting in gql query
+@contentful/rich-text-react-renderer
+
 
 1.  **Create a Gatsby site.**
 
