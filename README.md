@@ -16,7 +16,9 @@ i then created a second branch so that i could developer a version that uses a h
 gatsby-source-filesystem
 gatsby-plugin-sass
 gatsby-transformer-remark Parses Markdown files using Remark.
-
+gatsby-plugin-sharp
+gatsby-remark-images
+gatsby-remark-relative-images
 convert markdown to html
 logrocket
 css

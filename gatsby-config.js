@@ -8,14 +8,31 @@ module.exports = {
   /* Your site config here */
   plugins: [
     "gatsby-plugin-sass",
-    "gatsby-transformer-remark",
-    { resolve: "gatsby-source-filesystem" ,
+    "gatsby-plugin-sharp",
+    {
+      resolve: "gatsby-transformer-remark",
       options: {
-      name:'src',
-        path:`${__dirname}/src/` // nodejs file, nodejs syntax
-      }
-    }
-    ],
+        plugins: [
+          "gatsby-remark-relative-images",
+          {
+            resolve: `gatsby-remark-images`,
+            options: {
+              maxWidth: 750,
+              linkImagesToOriginal: false,
+              // above: keeps images from linking to the image
+            },
+          },
+        ],
+      },
+    },
+    {
+      resolve: "gatsby-source-filesystem",
+      options: {
+        name: "src",
+        path: `${__dirname}/src/`, // nodejs file, nodejs syntax
+      },
+    },
+  ],
   siteMetadata: {
     title: "Frank Joseph Santaguida",
     author: "Frank J Santaguida",

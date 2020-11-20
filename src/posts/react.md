@@ -1,5 +1,5 @@
 ---
-title: 'react'
+title: 'react nice'
 date:   "2019-01-01"
 ---
 
