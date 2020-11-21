@@ -34,6 +34,13 @@ momentjs time formatting in gql query
 
 gatsby-plugin-react-helmet
 react-helmet
+gatsby-plugin-use-dark-mode
+gatsby-plugin-dark-mode
+
+npm install --save gatsby-plugin-web-font-loader
+
+npm install --save react-obfuscate
+
 
 
 1.  **Create a Gatsby site.**

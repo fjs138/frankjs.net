@@ -5,16 +5,17 @@ import Layout from "../components/layout"
 import LogRocket from 'logrocket';
 LogRocket.init('vvy5uo/test');
 
+
 export default function IndexPage() {
   return (
     <Layout>
       < Head title="Home"/>
-      <h1>Index Page</h1>
-      <h2>
-        I'm Frank, a full-stack developer living in beautiful Philadelphia.
+
+      <h1>./Home</h1>
+      <h2 id='hello'>
+        Hello. I'm Frank.
       </h2>
-      <p>
-        Need a developer? <Link to="/contact">Contact me.</Link>
+      <p id='greet'>Full-stack developer living in beautiful Philadelphia (USA). Need a developer? <Link to="/contact">Contact me.</Link>
       </p>
     </Layout>
   )

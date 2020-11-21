@@ -8,10 +8,10 @@ export default function AboutPage() {
     <Layout>
       <Head title="About" />
 
-      <h1>About Page</h1>
+      <h1>./About</h1>
         <h2>I'm pretty cool.</h2>
         <p>
-          Want to work with me? Reach out:<Link to="/contact">Contact me.</Link>
+          Want to work with me? Reach out: <Link to="/contact">Contact me.</Link>
         </p>
     </Layout>
   )

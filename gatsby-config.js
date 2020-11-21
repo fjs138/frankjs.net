@@ -7,18 +7,31 @@
 module.exports = {
   /* Your site config here */
   plugins: [
-    { resolve: 'gatsby-source-contentful',
+    'gatsby-image',
+    {
+      resolve: 'gatsby-plugin-web-font-loader',
+      options: {
+        google: {
+          families: ['Fira Sans', 'Fira Sans Black', 'Poppins', 'Droid Serif','Questrial', 'Work Sans']
+        }
+      }
+    },
+    "gatsby-plugin-dark-mode",
+    "gatsby-plugin-use-dark-mode",
+    {
+      resolve: "gatsby-source-contentful",
       options: {
         spaceId: process.env.CONTENTFUL_SPACE_ID, // for security
         accessToken: process.env.CONTENTFUL_ACCESS_TOKEN, // for security
-      }},
+      },
+    },
     "gatsby-plugin-sass",
     "gatsby-plugin-sharp",
     {
       resolve: "gatsby-transformer-remark",
       options: {
         plugins: [
-          'gatsby-plugin-react-helmet',
+          "gatsby-plugin-react-helmet",
           {
             resolve: "gatsby-plugin-page-progress",
             options: {
@@ -26,9 +39,9 @@ module.exports = {
               excludePaths: ["/blog/beep-beep-lettuce"],
               height: 3,
               prependToBody: false,
-              color: `#663399`,
+              color: `#FF9800`,
               footerHeight: 500,
-            }
+            },
           },
           "gatsby-remark-relative-images",
           {
@@ -51,7 +64,7 @@ module.exports = {
     },
   ],
   siteMetadata: {
-    title: "Frank Joseph Santaguida",
+    title: "< FrankJS />",
     author: "Frank J Santaguida",
   },
 }
