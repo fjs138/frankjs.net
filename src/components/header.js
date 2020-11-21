@@ -23,7 +23,7 @@ export default function Header() {
               to="/"
               activeClassName={headerStyles.activeNavItem}
             >
-              📁 ♾Home
+              📁 Home
             </Link>
           </li>{" "}
           <li>
