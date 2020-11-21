@@ -32,6 +32,9 @@ contentful
 momentjs time formatting in gql query
 @contentful/rich-text-react-renderer
 
+gatsby-plugin-react-helmet
+react-helmet
+
 
 1.  **Create a Gatsby site.**
 

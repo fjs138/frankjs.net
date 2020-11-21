@@ -19,6 +19,18 @@ module.exports = {
       resolve: "gatsby-transformer-remark",
       options: {
         plugins: [
+          'gatsby-plugin-react-helmet',
+          {
+            resolve: "gatsby-plugin-page-progress",
+            options: {
+              includePaths: ["/", { regex: "^/blog" }],
+              excludePaths: ["/blog/beep-beep-lettuce"],
+              height: 3,
+              prependToBody: false,
+              color: `#663399`,
+              footerHeight: 500,
+            }
+          },
           "gatsby-remark-relative-images",
           {
             resolve: `gatsby-remark-images`,

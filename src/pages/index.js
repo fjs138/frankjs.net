@@ -1,3 +1,4 @@
+import Head from "../components/head"
 import React from "react"
 import { Link } from "gatsby"
 import Layout from "../components/layout"
@@ -7,6 +8,7 @@ LogRocket.init('vvy5uo/test');
 export default function IndexPage() {
   return (
     <Layout>
+      < Head title="Home"/>
       <h1>Index Page</h1>
       <h2>
         I'm Frank, a full-stack developer living in beautiful Philadelphia.
