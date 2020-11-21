@@ -1,15 +1,25 @@
 import React from "react"
 import { /*Link,*/ graphql, useStaticQuery } from "gatsby"
+import facebook from "../../static/icons/facebook.svg"
+import githubLogo from "../../static/icons/githubLogo.svg"
+import linkedin from "../../static/icons/linkedin.svg"
+import footerStyles from "./footer.module.scss"
+import headerStyles from "./header.module.scss"
 
 export default function Footer() {
-  const data =  useStaticQuery(graphql`
-    query{site{siteMetadata{author}}}
+  const data = useStaticQuery(graphql`
+    query {
+      site {
+        siteMetadata {
+          author
+        }
+      }
+    }
   `)
   return (
-    <footer>
-      <p>
-        Created by {data.site.siteMetadata.author}, © 2020. All Rights Reserved.
-      </p>
+    <footer className={footerStyles.footer}>
+          Created by {data.site.siteMetadata.author}, © 2020. All Rights
+          Reserved.
     </footer>
   )
 }
