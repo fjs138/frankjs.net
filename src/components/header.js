@@ -1,19 +1,17 @@
 import React from "react"
 import { Link, graphql, useStaticQuery } from "gatsby"
-
-
-// import "./header.module.scss"
+import './layout.scss';
 import headerStyles from "./header.module.scss"
-
+import { ThemeToggler } from "gatsby-plugin-dark-mode"
 export default function Header() {
   // data from gql api
   const data = useStaticQuery(graphql`
     query {site{siteMetadata{title}}}
   `) // tagged template literal
   return (
-    <header className={headerStyles.header}>
+    <header className={`${headerStyles.header} sticky-top`}>
       <h1>
-        <Link className={headerStyles.title} to="/">
+        <Link className={headerStyles.title} to="/" >
           {data.site.siteMetadata.title}
         </Link>
       </h1>
@@ -25,7 +23,7 @@ export default function Header() {
               to="/"
               activeClassName={headerStyles.activeNavItem}
             >
-              Home
+              📁 ♾Home
             </Link>
           </li>{" "}
           <li>
@@ -34,7 +32,7 @@ export default function Header() {
               to="/about"
               activeClassName={headerStyles.activeNavItem}
             >
-              About
+              📢 About
             </Link>
           </li>{" "}
           <li>
@@ -43,7 +41,7 @@ export default function Header() {
               to="/blog"
               activeClassName={headerStyles.activeNavItem}
             >
-              Blog
+              🖋 Blog
             </Link>
           </li>{" "}
           <li>
@@ -52,8 +50,31 @@ export default function Header() {
               to="/contact"
               activeClassName={headerStyles.activeNavItem}
             >
-              Contact
+              💬 Contact
             </Link>
+          </li>
+          <li>
+            <Link
+              className={headerStyles.navItem}
+              to="/uses"
+              activeClassName={headerStyles.activeNavItem}
+            >
+              💻 Uses
+            </Link>
+          </li>
+          <li>
+            <ThemeToggler>
+              {({ theme, toggleTheme }) => (
+                <label>
+                  <input
+                    type="checkbox"
+                    onChange={e => toggleTheme(e.target.checked ? 'dark' : 'light')}
+                    checked={theme === 'dark'}
+                  />{' '}
+                  Dark mode
+                </label>
+              )}
+            </ThemeToggler>
           </li>
         </ul>
       </nav>
