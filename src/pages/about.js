@@ -15,11 +15,11 @@ export default function AboutPage() {
         </p>
       <h3>// built with</h3>
       <ul>
-        <li>Gatsby (React-framework)</li>
-        <li>React (front-end library)</li>
-        <li>GraphQL (API)</li>
-        <li>Contentful (headless CMS)</li>
-        <li>Netlify (hosting, deployment)</li>
+        <li><a href='https://gatsbyjs.org' target='_blank'> Gatsby </a>(React-framework)</li>
+        <li><a href='https://reactjs.org' target='_blank'> React </a>(front-end library)</li>
+        <li><a href='https://graphql.org' target='_blank'> GraphQL </a> (API)</li>
+        <li><a href='https://contentful.com' target='_blank'> Contentful </a> (headless CMS)</li>
+        <li><a href='https://netlify.com' target='_blank'> Netlify </a> (hosting, deployment)</li>
       </ul>
     </Layout>
   )
