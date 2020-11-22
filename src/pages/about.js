@@ -13,7 +13,7 @@ export default function AboutPage() {
         <p>
           Want to work with me? Reach out: <Link to="/contact">Contact me.</Link>
         </p>
-      <h3>🔨 This site was built with</h3>
+      <h3>// built with</h3>
       <ul>
         <li>Gatsby (React-framework)</li>
         <li>React (front-end library)</li>
