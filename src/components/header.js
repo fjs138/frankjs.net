@@ -27,13 +27,13 @@ export default function Header() {
             </Link>
           </li>{" "}
           <li>
-            <Link
-              className={headerStyles.navItem}
-              to="/about"
-              activeClassName={headerStyles.activeNavItem}
-            >
-              📢 About
-            </Link>
+            {/*<Link*/}
+            {/*  className={headerStyles.navItem}*/}
+            {/*  to="/about"*/}
+            {/*  activeClassName={headerStyles.activeNavItem}*/}
+            {/*>*/}
+            {/*  📢 Me*/}
+            {/*</Link>*/}
           </li>{" "}
           <li>
             <Link
@@ -47,10 +47,10 @@ export default function Header() {
           <li>
             <Link
               className={headerStyles.navItem}
-              to="/contact"
+              to="/me"
               activeClassName={headerStyles.activeNavItem}
             >
-              💬 Contact
+              💬 Me
             </Link>
           </li>
           <li>

@@ -3,11 +3,11 @@ import Layout from "../components/layout"
 import Head from "../components/head"
 import Obfuscate from "react-obfuscate"
 
-export default function ContactPage() {
+export default function MePage() {
   return (
     <Layout>
       <Head title="Contact" />
-      <h1>./Contact</h1>
+      <h1>./Me</h1>
       <h3>
         ☎️ Phone:{" "}<Obfuscate tel="267-977-8356" />
       </h3>
@@ -38,6 +38,12 @@ export default function ContactPage() {
         🤖{" "}
         <a target="_blank" href="https://github.com/fjs138">
           Github
+        </a>
+      </h3>
+      <h3>
+        📝 {" "}
+        <a target="_blank" href="https://builtbyfrank.com/Frank_Santaguida_Resume.pdf">
+          Resume
         </a>
       </h3>
     </Layout>

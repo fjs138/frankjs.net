@@ -20,6 +20,7 @@ export default function AboutPage() {
         <li><a href='https://graphql.org' target='_blank'> GraphQL </a> (API)</li>
         <li><a href='https://contentful.com' target='_blank'> Contentful </a> (headless CMS)</li>
         <li><a href='https://netlify.com' target='_blank'> Netlify </a> (hosting, deployment)</li>
+        <li><a href='https://github.com/fjs138/bbf-gatsby-blog' target='_blank'> Github </a> (source code)</li>
       </ul>
     </Layout>
   )

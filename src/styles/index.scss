@@ -17,14 +17,14 @@ body {
 
 }
 
-#greet{
-  font-size: 20px;
-  margin: 0 0 0 0;
-  white-space: nowrap;
-  overflow: hidden;
-  width: 50em;
-  animation: type 4s steps(60, end);
-}
+//#greet{
+//  font-size: 20px;
+//  margin: 0 0 0 0;
+//  white-space: normal;
+//  overflow: auto;
+//  width: 50em;
+//  animation: type 4s steps(60, end);
+//}
 
 @keyframes type{
   from { width: 0; }
