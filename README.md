@@ -1,75 +1,40 @@
-<p align="center">
-  <a href="https://www.gatsbyjs.com">
-    <img alt="Gatsby" src="https://www.gatsbyjs.com/Gatsby-Monogram.svg" width="60" />
-  </a>
-</p>
-<h1 align="center">
-Rebuild of builtbyfrank.com/blog</h1>
+## builtbyfrank.com/blog Rebuild
 
-Fully recreated blog, transitioning from a WordPress site to React, utilizing Gatsby.
+## The Goal
+I have a blog located at my business' website's ./blog.
+I wanted to expand it beyond a blog, and move on from WordPress. I selected Gatsby for this project.
+
+Initially i developed this to draw data from markdown formatted blog posts. 
+I then created a second branch, "contentful", so that i could develop a version that uses a headless cms, in this case, netlify, and implements CI/CD.
 
 _Check out the old site here:click me!(https://www.builtbyfrank.com/blog)._
 
-## 🚀 Quick start
-initially i developed this to draw data from markdown formatted blog posts
-i then created a second branch so that i could developer a version that uses a headless cms, and implements CI/CD.
-gatsby-source-filesystem
-gatsby-plugin-sass
-gatsby-transformer-remark Parses Markdown files using Remark.
-gatsby-plugin-sharp
-gatsby-remark-images
-gatsby-remark-relative-images
-convert markdown to html
-logrocket
-css
-js
-react
-gatsby
-graphql
-markdown
 
-contentful
-momentjs time formatting in gql query
-@contentful/rich-text-react-renderer
+## Technology Stack:
 
-gatsby-plugin-react-helmet
-react-helmet
-gatsby-plugin-use-dark-mode
-gatsby-plugin-dark-mode
+| Technology    	| Use           	  | Description     	|
+| :------------------|:-------------------| :----------------	|
+| HTML, CSS, JS 			| Languages     | 				  |
+| React	(Gatsby)		| Front-end			  |	JavaScript library for building user interfaces            |
+| GraphQL			| data manipulation			  |	open-source data query and manipulation language for APIs|
+| Logrocket			| monitoring			  |	  lets you replay what users do on your site|
+| Express			| data storage			  |	Fast, unopinionated, minimalist web framework for node.|
+|Axios|http client|A library for server communications (more on this later); Axios is a Promise-based HTTP client that works in both browsers and Node.|
+|react-obfuscate
+|obfuscate contact info| react component that can be used to obfuscate phone numbers, etc printed on a website.|
+|contentful|headless cms |content platform|
 
-npm install --save gatsby-plugin-web-font-loader
-
-npm install --save react-obfuscate
+## Anatomy of Project
 
 
+| File/Folder    	| Purpose           	  |
+| :------------------|:-------------------|
+| src/pages		 			| Main Site Pages|
+| src/components		 			| React Components    |
+| src/posts	 			| Markdown Posts     |
+| src/templates| Individual Blog Post Template     |
 
-1.  **Create a Gatsby site.**
-
-    Use the Gatsby CLI to create a new site, specifying the hello-world starter.
-
-    ```shell
-    # create a new Gatsby site using the hello-world starter
-    gatsby new my-hello-world-starter https://github.com/gatsbyjs/gatsby-starter-hello-world
-    ```
-
-1.  **Start developing.**
-
-    Navigate into your new site’s directory and start it up.
-
-    ```shell
-    cd my-hello-world-starter/
-    gatsby develop
-    ```
-
-1.  **Open the source code and start editing!**
-
-    Your site is now running at `http://localhost:8000`!
-
-    _Note: You'll also see a second link: _`http://localhost:8000/___graphql`_. This is a tool you can use to experiment with querying your data. Learn more about using this tool in the [Gatsby tutorial](https://www.gatsbyjs.com/tutorial/part-five/#introducing-graphiql)._
-
-    Open the `my-hello-world-starter` directory in your code editor of choice and edit `src/pages/index.js`. Save your changes and the browser will update in real time!
-
-## 🧐 What's inside?
+## What's inside?
 
 A quick look at the top-level files and directories you'll see in a Gatsby project.
 
@@ -111,18 +76,29 @@ A quick look at the top-level files and directories you'll see in a Gatsby proje
 
 12. **`README.md`**: A text file containing useful reference information about your project.
 
-## 🎓 Learning Gatsby
 
-Looking for more guidance? Full documentation for Gatsby lives [on the website](https://www.gatsbyjs.com/). Here are some places to start:
 
-- **For most developers, we recommend starting with our [in-depth tutorial for creating a site with Gatsby](https://www.gatsbyjs.com/tutorial/).** It starts with zero assumptions about your level of ability and walks through every step of the process.
+## License
+MIT License
 
-- **To dive straight into code samples, head [to our documentation](https://www.gatsbyjs.com/docs/).** In particular, check out the _Guides_, _API Reference_, and _Advanced Tutorials_ sections in the sidebar.
+Copyright (c) 2015 Frank Santaguida
 
-## 💫 Deploy
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
 
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/gatsbyjs/gatsby-starter-hello-world)
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/import/project?template=https://github.com/gatsbyjs/gatsby-starter-hello-world)
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
 
-<!-- AUTO-GENERATED-CONTENT:END -->
+
