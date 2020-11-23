@@ -12,7 +12,7 @@ export default function IndexPage() {
       <Head title="Home" />
 
       <h1>./Home</h1>
-      <h2 id="hello">Hello. I'm Frank Joseph Santaguida.</h2>
+      <h2 id="hello">Hello. I'm Frank.</h2>
       <div id="greet">
         A developer living in Philadelphia, I am currently available for
         hire.<br/><br/>

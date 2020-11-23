@@ -23,7 +23,7 @@ export default function Header() {
               to="/"
               activeClassName={headerStyles.activeNavItem}
             >
-              📁 Home
+              🏠 Home
             </Link>
           </li>{" "}
           <li>
@@ -41,7 +41,7 @@ export default function Header() {
               to="/blog"
               activeClassName={headerStyles.activeNavItem}
             >
-              🖋 Blog
+              📝 Blog
             </Link>
           </li>{" "}
           <li>
@@ -50,7 +50,7 @@ export default function Header() {
               to="/me"
               activeClassName={headerStyles.activeNavItem}
             >
-              💬 Me
+              👨 Me
             </Link>
           </li>
           <li>
@@ -59,7 +59,7 @@ export default function Header() {
               to="/uses"
               activeClassName={headerStyles.activeNavItem}
             >
-              💻 Uses
+              🧰 Uses
             </Link>
           </li>
           <li>

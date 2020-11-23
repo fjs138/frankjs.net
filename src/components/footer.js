@@ -18,8 +18,7 @@ export default function Footer() {
   `)
   return (
     <footer className={footerStyles.footer}>
-          Created by {data.site.siteMetadata.author}, © 2020. All Rights
-          Reserved.
+          Created by {data.site.siteMetadata.author}, © 2020
     </footer>
   )
 }
