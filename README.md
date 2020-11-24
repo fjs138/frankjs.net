@@ -9,7 +9,6 @@ I then created a second branch, "contentful", so that i could develop a version 
 
 _Check out the old site here:click me!(https://www.builtbyfrank.com/blog)._
 
-
 ## Technology Stack:
 
 | Technology    	| Use           	  | Description     	|

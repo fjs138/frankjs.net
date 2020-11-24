@@ -14,7 +14,7 @@ export default function IndexPage() {
       <h1>./Home</h1>
       <h2 id="hello">Hello. I'm Frank.</h2>
       <div id="greet">
-        A developer living in Philadelphia, I am currently available for
+        A software engineer living in Philadelphia, I am currently available for
         hire.<br/><br/>
           {/*Got an idea you want to make a reality?{" "}*/}
           {/*<Link to="/contact">Contact me.</Link>*/}
