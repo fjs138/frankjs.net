@@ -6,22 +6,22 @@ I wanted to expand it beyond a blog, and move on from WordPress. I selected Gats
 
 Initially i developed this to draw data from markdown formatted blog posts. 
 I then created a second branch, "contentful", so that i could develop a version that uses a headless cms, in this case, netlify, and implements CI/CD.
+This branch was then rebased into the main branch after completion of the feature set.
 
-_Check out the old site here:click me!(https://www.builtbyfrank.com/blog)._
+
+_Check out the old site here: (https://www.builtbyfrank.com/blog)._
 
 ## Technology Stack:
 
 | Technology    	| Use           	  | Description     	|
 | :------------------|:-------------------| :----------------	|
-| HTML, CSS, JS 			| Languages     | 				  |
+| HTML, CSS, JS 			| Languages     | 	Sass for CSS			  |
 | React	(Gatsby)		| Front-end			  |	JavaScript library for building user interfaces            |
 | GraphQL			| data manipulation			  |	open-source data query and manipulation language for APIs|
 | Logrocket			| monitoring			  |	  lets you replay what users do on your site|
 | Express			| data storage			  |	Fast, unopinionated, minimalist web framework for node.|
-|Axios|http client|A library for server communications (more on this later); Axios is a Promise-based HTTP client that works in both browsers and Node.|
-|react-obfuscate
-|obfuscate contact info| react component that can be used to obfuscate phone numbers, etc printed on a website.|
-|contentful|headless cms |content platform|
+|react-obfuscate| obfuscate contact info| react component that can be used to obfuscate phone numbers, etc printed on a website.|
+|Contentful|headless CMS |content platform|
 
 ## Anatomy of Project
 
@@ -30,7 +30,7 @@ _Check out the old site here:click me!(https://www.builtbyfrank.com/blog)._
 | :------------------|:-------------------|
 | src/pages		 			| Main Site Pages|
 | src/components		 			| React Components    |
-| src/posts	 			| Markdown Posts     |
+| src/posts	 			| Markdown Posts (deprecated)     |
 | src/templates| Individual Blog Post Template     |
 
 ## What's inside?
