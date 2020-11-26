@@ -23,26 +23,26 @@ export default function MePage() {
       </h3>
       <h3>
         🤝 Business:{" "}
-        <a target="_blank" href="https://builtbyfrank.com">
+        <a target="_blank" rel="noreferrer" href="https://builtbyfrank.com">
           Built By Frank
         </a>
       </h3>
 
       <h3>
         👔{" "}
-        <a target="_blank" href="https://www.linkedin.com/in/franksantaguida/">
+        <a target="_blank" rel="noreferrer" href="https://www.linkedin.com/in/franksantaguida/">
           LinkedIn
         </a>
       </h3>
       <h3>
         🤖{" "}
-        <a target="_blank" href="https://github.com/fjs138">
+        <a target="_blank" rel="noreferrer" href="https://github.com/fjs138">
           Github
         </a>
       </h3>
       <h3>
         📝 {" "}
-        <a target="_blank" href="https://builtbyfrank.com/Frank_Santaguida_Resume.pdf">
+        <a target="_blank" rel="noreferrer" href="https://builtbyfrank.com/Frank_Santaguida_Resume.pdf">
           Resume
         </a>
       </h3>

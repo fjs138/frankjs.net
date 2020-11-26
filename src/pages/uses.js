@@ -1,26 +1,23 @@
 import React from "react"
-import Layout from "../components/layout"
-import Head from "../components/head"
-import usestyles from "./uses.module.scss"
+import Layout from '../components/layout';
+import Head from '../components/head';
+import usestyles from './uses.module.scss';
 
 export default function UsesPage() {
   return (
     <Layout>
       <Head title="Uses" />
       <h1>./Uses</h1>
-      <h2>
-        What I use in my daily workflow:
-      </h2>
+      <h2>What I use in my daily workflow:</h2>
       <h3>🔧 Development</h3>
       <p>
-        While I continue to use Windows and Linux on a regular basis,
-        I greatly prefer *nix systems, particularly MacOS.
-        My favorite Linux distributions are Debian based, but Arch is amazing
-        too.
+        While I continue to use Windows and Linux on a regular basis, I greatly
+        prefer *nix systems, particularly MacOS.
       </p>
       <p>
-        I prefer IntelliJ IDE's. For light editing I like Visual Studio Code and Sublime Text.
-        I use One Dark for my theme and color scheme.
+        I prefer IntelliJ IDE's. For light editing I like Visual Studio Code and
+        Sublime Text. I use One Dark for my theme and color scheme. I've
+        recently started to follow Airbnb's style guide for my coding.
       </p>
       <h3>📅️ Productivity</h3>
       <ul>
@@ -41,9 +38,7 @@ export default function UsesPage() {
       <h3>📱 Gear</h3>
       <ul>
         <li>MacBook Pro 16" (2019)</li>
-        <li>
-          Watch (S4, Stainless Steel)
-        </li>
+        <li>Watch (S4, Stainless Steel)</li>
         <li>iPhone (11)</li>
         <li>iPad (6th)</li>
         <li>Airpods Pro</li>
