@@ -3,9 +3,11 @@
   margin: 0;
 }
 
-.post { // class selector, targeting elements inside such as a, h2, etc
+.post {
+  // class selector, targeting elements inside such as a, h2, etc
   margin: 1rem 0;
-  a { // nested rules, thanks to Sass
+  a {
+    // nested rules, thanks to Sass
     background: #f4f4f4;
     color: #000000;
     display: block;
@@ -17,17 +19,19 @@
   }
   h2 {
     margin-bottom: 0;
-
   }
   p {
     color: #777777;
-    font-size: .8rem;
+    font-size: 0.8rem;
     font-style: italic;
   }
 }
 
-h3 {margin-top: 2rem;
-text-decoration: none;}
+h3 {
+  margin-top: 2rem;
+  text-decoration: none;
+}
 
 li {
-  clear: left;}
+  clear: left;
+}

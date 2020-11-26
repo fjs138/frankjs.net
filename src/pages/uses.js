@@ -1,4 +1,4 @@
-import React from "react"
+import React from 'react';
 import Layout from '../components/layout';
 import Head from '../components/head';
 import usestyles from './uses.module.scss';
@@ -49,5 +49,5 @@ export default function UsesPage() {
         <li>Staples Hyken Mesh Task Chair</li>
       </ul>
     </Layout>
-  )
+  );
 }

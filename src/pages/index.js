@@ -24,7 +24,7 @@ export default function IndexPage() {
         <h3>// built with</h3>
         <ul>
           <li>
-            <a href="https://gatsbyjs.org" target="_blank">
+            <a href="https://gatsbyjs.org" rel="noreferrer" target="_blank">
               {' '}
               Gatsby
               {' '}
@@ -32,7 +32,7 @@ export default function IndexPage() {
             (React-framework)
           </li>
           <li>
-            <a href="https://reactjs.org" target="_blank">
+            <a href="https://reactjs.org" rel="noreferrer" target="_blank">
               {' '}
               React
               {' '}
@@ -40,7 +40,7 @@ export default function IndexPage() {
             (front-end library)
           </li>
           <li>
-            <a href="https://graphql.org" target="_blank">
+            <a href="https://graphql.org" rel="noreferrer" target="_blank">
               {' '}
               GraphQL
               {' '}
@@ -49,7 +49,7 @@ export default function IndexPage() {
             (API)
           </li>
           <li>
-            <a href="https://contentful.com" target="_blank">
+            <a href="https://contentful.com" rel="noreferrer" target="_blank">
               {' '}
               Contentful
               {' '}

@@ -1,12 +1,14 @@
 ---
-title: 'react nice'
-date:   "2019-01-01"
+title: "react nice"
+date: "2019-01-01"
 ---
+
 The Hidden Cost of Maintaining Large Projects with Dynamic Languages
 
 I just did this, too.
 
 ## Topics
+
 1. meat
 2. cheese
 
@@ -20,7 +22,7 @@ Maintainers of large codebases seek to mitigate these encumbrances. One way is t
 
 One more way of helping a project’s coding go more smoothly is automated error detection. While you can build something that determines where programming errors have been found and subsequently notifies you about the error, a statically typed language offers a way of doing this “free of cost”. Their compiler looks for type errors. With a dynamically typed language you must annotate with information about what can go into variables, or storage locations. The result is that the work done by the compiler for static languages is work you must do. If mistakes are made by a programmer, regarding what type of data can be stored somewhere, they must be caught with your testing and review, not the compiler.
 
-The more significant reasons that make maintaining large codebases more difficult with dynamically typed languages are actually not inherent to their being dynamic. It is due to the fact that, in general, dynamically typed languages are lacking the features that ease maintaining large codebases that are, in general,  associated with statically typed languages.
+The more significant reasons that make maintaining large codebases more difficult with dynamically typed languages are actually not inherent to their being dynamic. It is due to the fact that, in general, dynamically typed languages are lacking the features that ease maintaining large codebases that are, in general, associated with statically typed languages.
 
 Let us cherry-pick JavaScript, specifically the language in its earliest forms, as an example of a dynamic language that does not lend itself well to large software projects. It was not created with robust support for classes or encapsulation. Since JavaScript was designed originally for scripts viewed in a web browser, it has an appropriate way of managing errors. Web page scripts compared to mission critical software, are expected to fail more often, and with a low cost of failure. Making matters even worse, due to the fact that the end-user is the one who will be seeing any error messages and not the developer, there is little reason for verbosity. While ECMA2015/ECMAScript 6 introduced “classes”, these are “special functions”, and are largely “syntactic sugar”.
 
