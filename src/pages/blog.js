@@ -29,7 +29,9 @@ export default function BlogPage() {
           <li className={blogStyles.post}>
             <Link to={`/blog/${edge.node.slug}`}>
               <h2>{edge.node.title}</h2>
+{/*
               <p>{edge.node.publishedDate}</p>
+*/}
             </Link>
           </li>
         ))}

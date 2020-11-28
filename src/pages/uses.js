@@ -10,29 +10,48 @@ export default function UsesPage() {
       <h1>./Uses</h1>
       <h2>What I use in my daily workflow:</h2>
       <h3>🔧 Development</h3>
-      <p>
+      <ul>
+        <li><a href="https://www.jetbrains.com"target="_blank" rel="noreferrer"> WebStorm</a> {' '} (IDE)</li>
+        <li>
+          <a href="https://airbnb.io/javascript/" target="_blank" rel="noreferrer">
+            Airbnb Style
+          </a>
+          {' '}
+          (Style Guide)
+        </li>
+        <li>
+          <a href="https://binaryify.github.io/OneDark-Pro/#/?id=about" target="_blank" rel="noreferrer">
+            One Dark
+          </a>
+          {' '}
+          (Color Scheme)
+        </li>
+      </ul><p>
         While I continue to use Windows and Linux on a regular basis, I greatly
         prefer *nix systems, particularly MacOS.
       </p>
       <p>
-        I prefer IntelliJ IDE's. For light editing I like Visual Studio Code and
-        Sublime Text. I use One Dark for my theme and color scheme. I've
-        recently started to follow Airbnb's style guide for my coding.
+       For light editing I like Visual Studio Code and
+        Sublime Text.
       </p>
       <h3>📅️ Productivity</h3>
       <ul>
-        <li>Things (GTD) </li>
-        <li>Evernote (Notes)</li>
-        <li>Google Calendar, Email</li>
-      </ul>
-
-      <h3>💾 Software</h3>
-      <ul>
-        <li>MacOS</li>
-        <li>WebStorm (IDE)</li>
-        <li>MS Office</li>
-        <li>MS Edge (browser)</li>
-        <li>Google Drive, iCloud</li>
+        <li>
+          <a href="https://culturedcode.com" target="_blank" rel="noreferrer">
+            Things
+          </a>
+          {' '}
+          (GTD)
+        </li>
+        <li>
+          <a href="https://evernote.com" target="_blank" rel="noreferrer">
+            Evernote
+          </a>
+          {' '}
+          (Notes)
+        </li>
+        <li><a href="https://www.microsoft.com/office" target="_blank" rel="noreferrer"> Office</a> {' '} (Office)</li>
+        <li><a href="https://www.microsoft.com/edge"target="_blank" rel="noreferrer"> Edge</a> {' '} (Browser)</li>
       </ul>
 
       <h3>📱 Gear</h3>
