@@ -30,7 +30,7 @@ export default function UsesPage() {
         <br />
         For light editing I like
         {' '}
-        <a href="https://code.visualstudio.com/">Visual Studio Code</a> and
+        <a href="https://code.visualstudio.com/" rel="noreferrer" target="_blank">Visual Studio Code</a> and
         Sublime Text.
       </p>
       <p>
@@ -43,7 +43,7 @@ export default function UsesPage() {
         >
           Airbnb's {' '}
         </a>style guide, as well as{' '}
-          <a href="https://www.eslint.org">ESLint</a>.
+          <a href="https://www.eslint.org" rel="noreferrer" target="_blank">ESLint</a>.
       </p>
       <p>
         While I continue to use Windows regularly, I greatly prefer *nix

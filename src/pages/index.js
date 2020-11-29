@@ -58,7 +58,7 @@ export default function IndexPage() {
             (headless CMS)
           </li>
           <li>
-            <a href="https://netlify.com" target="_blank">
+            <a href="https://netlify.com" rel="noreferrer" target="_blank">
               {' '}
               Netlify
               {' '}
@@ -67,7 +67,7 @@ export default function IndexPage() {
             (hosting, deployment)
           </li>
           <li>
-            <a href="https://github.com/fjs138/bbf-gatsby-blog" target="_blank">
+            <a href="https://github.com/fjs138/bbf-gatsby-blog" rel="noreferrer" target="_blank">
               {' '}
               Github
               {' '}
