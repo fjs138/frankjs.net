@@ -11,8 +11,12 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-web-font-loader',
       options: {
+        // custom: {
+        //   families: ["Master of Break"],
+        //   urls: ["/fonts/fonts.css"],
+        // },
         google: {
-          families: ['Fira Sans', 'Fira Sans Black', 'Poppins', 'Droid Serif','Questrial', 'Work Sans']
+          families: ['Fira Sans', 'Fira Sans Black', 'Poppins', 'Droid Serif','Questrial', 'Work Sans',]
         }
       }
     },
