@@ -7,7 +7,7 @@ export default function UsesPage() {
   return (
     <Layout>
       <Head title="Uses" />
-      <h1>./Uses</h1>
+      <h1 className="page-title">./Uses</h1>
       <h2>What I use in my daily workflow:</h2>
       <h3>🔧 Development</h3>
       <ul>
