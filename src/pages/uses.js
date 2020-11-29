@@ -1,7 +1,7 @@
-import React from 'react';
-import Layout from '../components/layout';
-import Head from '../components/head';
-import usestyles from './uses.module.scss';
+import React from "react"
+import Layout from "../components/layout"
+import Head from "../components/head"
+import usestyles from "./uses.module.scss"
 
 export default function UsesPage() {
   return (
@@ -10,49 +10,81 @@ export default function UsesPage() {
       <h1 className="page-title">./Uses</h1>
       <h2>What I use in my daily workflow:</h2>
       <h3>🔧 Development</h3>
-      <ul>
-        <li><a href="https://www.jetbrains.com"target="_blank" rel="noreferrer"> WebStorm</a> {' '} (IDE)</li>
-        <li><a href="https://www.microsoft.com/edge"target="_blank" rel="noreferrer"> Edge</a> {' '} (Browser)</li>
-
-        <li>
-          <a href="https://airbnb.io/javascript/" target="_blank" rel="noreferrer">
-            Airbnb Style
-          </a>
+      <p>
+        I use{' '}
+        <a href="https://www.jetbrains.com" target="_blank" rel="noreferrer">
           {' '}
-          (Style Guide)
-        </li>
-        <li>
-          <a href="https://binaryify.github.io/OneDark-Pro/#/?id=about" target="_blank" rel="noreferrer">
-            One Dark
-          </a>
-          {' '}
-          (Color Scheme)
-        </li>
-      </ul><p>
-        While I continue to use Windows regularly, I greatly
-        prefer *nix systems.
+          WebStorm
+        </a>
+        {' '}
+        as my IDE, with{' '}
+        <a
+          href="https://binaryify.github.io/OneDark-Pro/#/?id=about"
+          target="_blank"
+          rel="noreferrer"
+        >
+          One Dark
+        </a>
+        {' '}
+        as my color scheme.
+        <br />
+        For light editing I like
+        {' '}
+        <a href="https://code.visualstudio.com/">Visual Studio Code</a> and
+        Sublime Text.
       </p>
       <p>
-       For light editing I like Visual Studio Code and
-        Sublime Text.
+        I am currently exploring
+        {' '}
+        <a
+          href="https://airbnb.io/javascript/"
+          target="_blank"
+          rel="noreferrer"
+        >
+          Airbnb's {' '}
+        </a>style guide, as well as{' '}
+          <a href="https://www.eslint.org">ESLint</a>.
+      </p>
+      <p>
+        While I continue to use Windows regularly, I greatly prefer *nix
+        systems.
       </p>
       <h3>📅️ Productivity</h3>
       <ul>
         <li>
+          <a
+            href="https://www.microsoft.com/edge"
+            target="_blank"
+            rel="noreferrer"
+          >
+            {" "}
+            Edge
+          </a>{" "}
+          (Browser)
+        </li>
+        <li>
           <a href="https://culturedcode.com" target="_blank" rel="noreferrer">
             Things
-          </a>
-          {' '}
+          </a>{" "}
           (GTD)
         </li>
         <li>
           <a href="https://evernote.com" target="_blank" rel="noreferrer">
             Evernote
-          </a>
-          {' '}
+          </a>{" "}
           (Notes)
         </li>
-        <li><a href="https://www.microsoft.com/office" target="_blank" rel="noreferrer"> Office</a> {' '} (Office)</li>
+        <li>
+          <a
+            href="https://www.microsoft.com/office"
+            target="_blank"
+            rel="noreferrer"
+          >
+            {" "}
+            Office
+          </a>{" "}
+          (Office)
+        </li>
       </ul>
 
       <h3>📱 Gear</h3>
@@ -69,5 +101,5 @@ export default function UsesPage() {
         <li>Staples Hyken Mesh Task Chair</li>
       </ul>
     </Layout>
-  );
+  )
 }
