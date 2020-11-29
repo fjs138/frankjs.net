@@ -10,6 +10,7 @@ This branch was then rebased into the main branch after completion of the featur
 
 
 _Check out the old site here: (https://www.builtbyfrank.com/blog)._
+_And the new, deployed site here: (https://frankjs.net/blog)._
 
 ## Technology Stack:
 
