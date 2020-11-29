@@ -9,7 +9,8 @@ I then created a second branch, "contentful", so that i could develop a version 
 This branch was then rebased into the main branch after completion of the feature set.
 
 
-_Check out the old site here: (https://www.builtbyfrank.com/blog)._
+_Check out the old site here: (https://www.builtbyfrank.com/blog)._<br>
+_And the new, deployed site here: (https://frankjs.net/blog)._
 
 ## Technology Stack:
 
