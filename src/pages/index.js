@@ -67,7 +67,7 @@ export default function IndexPage() {
             (hosting, deployment)
           </li>
           <li>
-            <a href="https://github.com/fjs138/bbf-gatsby-blog" rel="noreferrer" target="_blank">
+            <a href="https://github.com/fjs138/frankjs-net" rel="noreferrer" target="_blank">
               {' '}
               Github
               {' '}
