@@ -21,7 +21,9 @@ export default function Footer() {
       Created by
       {' '}
       {data.site.siteMetadata.author}
-      , © 2020
+      ,{" "}
+      { /* © */ }
+      2020
     </footer>
   );
 }

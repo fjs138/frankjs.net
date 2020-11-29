@@ -12,6 +12,8 @@ export default function UsesPage() {
       <h3>🔧 Development</h3>
       <ul>
         <li><a href="https://www.jetbrains.com"target="_blank" rel="noreferrer"> WebStorm</a> {' '} (IDE)</li>
+        <li><a href="https://www.microsoft.com/edge"target="_blank" rel="noreferrer"> Edge</a> {' '} (Browser)</li>
+
         <li>
           <a href="https://airbnb.io/javascript/" target="_blank" rel="noreferrer">
             Airbnb Style
@@ -27,8 +29,8 @@ export default function UsesPage() {
           (Color Scheme)
         </li>
       </ul><p>
-        While I continue to use Windows and Linux on a regular basis, I greatly
-        prefer *nix systems, particularly MacOS.
+        While I continue to use Windows regularly, I greatly
+        prefer *nix systems.
       </p>
       <p>
        For light editing I like Visual Studio Code and
@@ -51,7 +53,6 @@ export default function UsesPage() {
           (Notes)
         </li>
         <li><a href="https://www.microsoft.com/office" target="_blank" rel="noreferrer"> Office</a> {' '} (Office)</li>
-        <li><a href="https://www.microsoft.com/edge"target="_blank" rel="noreferrer"> Edge</a> {' '} (Browser)</li>
       </ul>
 
       <h3>📱 Gear</h3>
