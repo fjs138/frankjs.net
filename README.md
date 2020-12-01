@@ -1,8 +1,9 @@
+# FrankJS.net
 ## builtbyfrank.com/blog Rebuild
 
 ## The Goal
 I have a blog located at my business' website's ./blog.
-I wanted to expand it beyond a blog, and move on from WordPress. I selected Gatsby for this project.
+I wanted to expand it beyond a blog, and make it a simple "online business card" of sorts. Another goal was to get away from WordPress. I selected Gatsby for this project, as it is yet unexplored for me. Overall I was very happy with the continual development capabilities provided to me by Netlify.
 
 Initially i developed this to draw data from markdown formatted blog posts. 
 I then created a second branch, "contentful", so that i could develop a version that uses a headless cms, in this case, netlify, and implements CI/CD.
