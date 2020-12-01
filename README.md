@@ -21,7 +21,6 @@ _And the new, deployed site here: (https://frankjs.net/blog)._
 | React	(Gatsby)		| Front-end			  |	JavaScript library for building user interfaces            |
 | GraphQL			| data manipulation			  |	open-source data query and manipulation language for APIs|
 | Logrocket			| monitoring			  |	  lets you replay what users do on your site|
-| Express			| data storage			  |	Fast, unopinionated, minimalist web framework for node.|
 |react-obfuscate| obfuscate contact info| react component that can be used to obfuscate phone numbers, etc printed on a website.|
 |Contentful|headless CMS |content platform|
 
