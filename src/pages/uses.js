@@ -29,14 +29,23 @@ export default function UsesPage() {
         </a>
         {' '}
         as my color scheme.
+      </p>
         <p>
           Almost everything I code uses
           {' '}
           <a href="https://git-scm.com/">git</a>
           {' '}
-          for version control.
+          for version control. I use <a href="https://heroku.com" rel="noreferrer" target="_blank">
+          {' '}
+          Heroku
+          {' '}
+        </a> and <a href="https://netlify.com" rel="noreferrer" target="_blank">
+          {' '}
+          Netlify
+          {' '}
+        </a> for CI/CD.
         </p>
-
+<p>
         For light editing I like
         {' '}
         <a
@@ -47,7 +56,14 @@ export default function UsesPage() {
           Visual Studio Code
         </a>
         {' '}
-        and Sublime Text.
+        and <a
+  href="https://sublimetext.com/"
+  rel="noreferrer"
+  target="_blank"
+>
+          Sublime Text
+
+</a>.
       </p>
       <p>
         I make an effort to write clean, readable code, using
