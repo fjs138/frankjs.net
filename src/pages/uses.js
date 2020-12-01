@@ -1,7 +1,7 @@
-import React from "react"
-import Layout from "../components/layout"
-import Head from "../components/head"
-import usestyles from "./uses.module.scss"
+import React from 'react';
+import Layout from '../components/layout';
+import Head from '../components/head';
+import usestyles from './uses.module.scss';
 
 export default function UsesPage() {
   return (
@@ -11,13 +11,15 @@ export default function UsesPage() {
       <h2>What I use in my daily workflow:</h2>
       <h3>🔧 Development</h3>
       <p>
-        I use{' '}
+        I use
+        {' '}
         <a href="https://www.jetbrains.com" target="_blank" rel="noreferrer">
           {' '}
           WebStorm
         </a>
         {' '}
-        as my IDE, with{' '}
+        as my IDE, with
+        {' '}
         <a
           href="https://binaryify.github.io/OneDark-Pro/#/?id=about"
           target="_blank"
@@ -27,23 +29,42 @@ export default function UsesPage() {
         </a>
         {' '}
         as my color scheme.
-        <br />
+        <p>
+          Almost everything I code uses
+          {' '}
+          <a href="https://git-scm.com/">git</a>
+          {' '}
+          for version control.
+        </p>
+
         For light editing I like
         {' '}
-        <a href="https://code.visualstudio.com/" rel="noreferrer" target="_blank">Visual Studio Code</a> and
-        Sublime Text.
+        <a
+          href="https://code.visualstudio.com/"
+          rel="noreferrer"
+          target="_blank"
+        >
+          Visual Studio Code
+        </a>
+        {' '}
+        and Sublime Text.
       </p>
       <p>
-        I am currently exploring
+        I make an effort to write clean, readable code, using
         {' '}
         <a
           href="https://airbnb.io/javascript/"
           target="_blank"
           rel="noreferrer"
         >
-          Airbnb's {' '}
-        </a>style guide, as well as{' '}
-          <a href="https://www.eslint.org" rel="noreferrer" target="_blank">ESLint</a>.
+          Airbnb's
+        </a>{' '}
+        style guide, as well as
+        {' '}
+        <a href="https://www.eslint.org" rel="noreferrer" target="_blank">
+          ESLint
+        </a>
+        .
       </p>
       <p>
         While I continue to use Windows regularly, I greatly prefer *nix
@@ -57,21 +78,24 @@ export default function UsesPage() {
             target="_blank"
             rel="noreferrer"
           >
-            {" "}
+            {' '}
             Edge
-          </a>{" "}
+          </a>
+          {' '}
           (Browser)
         </li>
         <li>
           <a href="https://culturedcode.com" target="_blank" rel="noreferrer">
             Things
-          </a>{" "}
+          </a>
+          {' '}
           (GTD)
         </li>
         <li>
           <a href="https://evernote.com" target="_blank" rel="noreferrer">
             Evernote
-          </a>{" "}
+          </a>
+          {' '}
           (Notes)
         </li>
         <li>
@@ -80,9 +104,10 @@ export default function UsesPage() {
             target="_blank"
             rel="noreferrer"
           >
-            {" "}
+            {' '}
             Office
-          </a>{" "}
+          </a>
+          {' '}
           (Office)
         </li>
       </ul>
@@ -93,13 +118,13 @@ export default function UsesPage() {
         <li>Watch (S4, Stainless Steel)</li>
         <li>iPhone (11)</li>
         <li>iPad (6th)</li>
-        <li>Airpods Pro</li>
         <li>Magic Keyboard & Mouse (1st)</li>
-        <li>Audio-Technica AT2020 Microphone</li>
+        <li>Airpods Pro</li>
         <li>Micca PB42X Speakers</li>
+        <li>Audio-Technica AT2020 Microphone</li>
         <li>Logitech C920 HD Pro Camera</li>
         <li>Staples Hyken Mesh Task Chair</li>
       </ul>
     </Layout>
-  )
+  );
 }
