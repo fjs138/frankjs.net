@@ -1,4 +1,5 @@
 # FrankJS.net
+[![Netlify Status](https://api.netlify.com/api/v1/badges/50bbc44f-5675-434e-8105-ba1e7c2b2434/deploy-status)](https://app.netlify.com/sites/condescending-jepsen-669694/deploys)
 ## builtbyfrank.com/blog Rebuild
 
 ## The Goal
@@ -6,11 +7,16 @@ I have a blog located at my business' website's ./blog.
 I wanted to expand it beyond a blog, and make it a simple "online business card" of sorts. Overall I was very happy with the continual development capabilities provided to me by Netlify. I decided to use Gatsby for this particular project, as I felt it was a good fit.
 
 Initially i developed this to draw data from markdown formatted blog posts. 
-I then created a second branch, "contentful", so that i could develop a version that uses a headless cms, in this case, netlify, and implements CI/CD.
+I then created a second branch, "contentful", so that i could develop a version that uses a headless cms, in this case,
+netlify, and implements CI/CD.
 This branch was then rebased into the main branch after completion of the feature set.
+<br>
+<br>
+I also added a build hook, so that when my Contentful posts are published or unpublished, it will trigger frankjs.net
+update the "blog page" appropriately.
 
-
-_Check out the old site here: (https://www.builtbyfrank.com/blog)._<br>
+[comment]: <> (_Check out the old site here: &#40;https://builtbyfrank.com/blog&#41;._)
+<br>
 _And the new, deployed site here: (https://frankjs.net/blog)._
 
 ## Technology Stack:
