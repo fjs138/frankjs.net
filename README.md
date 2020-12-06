@@ -12,7 +12,7 @@ netlify, and implements CI/CD.
 This branch was then rebased into the main branch after completion of the feature set.
 <br>
 <br>
-I also added a build hook, so that when my Contentful posts are published or unpublished, it will trigger frankjs.net
+I also added a build hook to my deployment, so that when my Contentful posts are published or unpublished, it will trigger frankjs.net
 update the "blog page" appropriately.
 
 [comment]: <> (_Check out the old site here: &#40;https://builtbyfrank.com/blog&#41;._)
