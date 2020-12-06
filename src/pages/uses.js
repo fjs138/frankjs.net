@@ -63,10 +63,11 @@ export default function UsesPage() {
 >
           Sublime Text
 
-</a>.
-      </p>
+            </a>.
+</p>
       <p>
-        I make an effort to write clean, readable code, using
+        I make an effort to write clean, readable code. <br/>As part of this, I have
+        started following
         {' '}
         <a
           href="https://airbnb.io/javascript/"
@@ -75,12 +76,14 @@ export default function UsesPage() {
         >
           Airbnb's
         </a>{' '}
-        style guide, as well as
+        style guide. I also use
         {' '}
         <a href="https://www.eslint.org" rel="noreferrer" target="_blank">
-          ESLint
+          ESLint{' '}
         </a>
-        .
+         and <a href="https://www.prettier.io" rel="noreferrer" target="_blank">
+        Prettier
+      </a>.
       </p>
       <p>
         While I continue to use Windows regularly, I greatly prefer *nix
