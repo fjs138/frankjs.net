@@ -16,7 +16,10 @@ module.exports = {
         //   urls: ["/fonts/fonts.css"],
         // },
         google: {
-          families: ['Fira Sans', 'Fira Sans Black', 'Poppins', 'Droid Serif','Questrial', 'Work Sans',]
+          families: [
+            //'Bebas Neue','Sancreek', 'Jost', 'Cousine', 'Source Sans Pro',
+            //'Fira Sans', 'Fira Sans Black', 'Poppins', 'Droid Serif',
+            'Questrial', 'Work Sans',]
         }
       }
     },
