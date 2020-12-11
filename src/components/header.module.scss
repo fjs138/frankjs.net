@@ -27,6 +27,8 @@ a {
   /*color: #0d40fd;*/
   //color:var(--textTitle);
   text-shadow: 3px 3px 0 var(--dropShadow);
+  justify-content: center;
+display: flex;
 }
 
 .title:visited {
@@ -38,6 +40,7 @@ a {
   display: flex;
   list-style: none;
   margin: 0;
+  justify-content: center;
 }
 
 .nav-item:hover {
