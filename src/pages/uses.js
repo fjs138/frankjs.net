@@ -75,7 +75,13 @@ export default function UsesPage() {
         >
           Airbnb's
         </a>{' '}
-        style guide. I also use
+        and
+        <a
+          href="https://google.github.io/styleguide/jsguide.html"
+          target="_blank"
+          rel="noreferrer"
+        >{' '}
+          Google's</a> style guides.  I also use
         {' '}
         <a href="https://www.eslint.org" rel="noreferrer" target="_blank">
           ESLint{' '}
