@@ -4,11 +4,11 @@
 
 ## The Goal
 I have a blog located at my business' website's ./blog.
-I wanted to expand it beyond a blog, and make it a simple "online business card" of sorts. Overall I was very happy with the continual development capabilities provided to me by Netlify. I decided to use Gatsby for this particular project, as I felt it was a good fit.
+I wanted to expand it beyond a blog, and make it a minimal, personal profile of sorts. Overall I was very happy with the continual development capabilities provided to me by Netlify. I decided to use Gatsby for this particular project, as I felt it was a good fit.
 
-Initially i developed this to draw data from markdown formatted blog posts. 
-I then created a second branch, "contentful", so that i could develop a version that uses a headless cms, in this case,
-netlify, and implements CI/CD.
+Initially I developed this to draw data from markdown formatted blog posts. 
+I then created a second branch, "contentful", so that I could develop an iteration that uses a headless cms, in this case
+Netlify, and implements CI/CD.
 This branch was then rebased into the main branch after completion of the feature set.
 <br>
 <br>
