@@ -66,8 +66,7 @@ export default function UsesPage() {
             </a>.
 </p>
       <p>
-        I make an effort to write clean, readable code. <br/>As part of this, I have
-        started following
+        I am currently exploring
         {' '}
         <a
           href="https://airbnb.io/javascript/"
