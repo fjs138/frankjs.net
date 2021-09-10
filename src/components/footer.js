@@ -18,12 +18,12 @@ export default function Footer() {
   `);
   return (
     <footer className={footerStyles.footer}>
-      Created by
-      {' '}
+
+      {''}
       {data.site.siteMetadata.author}
-      ,{" "}
+      ,{' '}
       { /* © */ }
-      2020
+      2021
     </footer>
   );
 }
