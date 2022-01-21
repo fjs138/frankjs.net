@@ -4,6 +4,9 @@ const path = require("path") // nodejs
 // path.basename('/foo/bar/baz/asdf/quux.html', '.html');
 //returns 'quux'
 
+require("dotenv").config({
+  path: `.env.${process.env.NODE_ENV}`,
+})
 
 // generate pages
 module.exports.createPages = async ({ graphql, actions }) => {

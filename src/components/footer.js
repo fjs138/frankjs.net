@@ -23,7 +23,7 @@ export default function Footer() {
       {data.site.siteMetadata.author}
       ,{' '}
       { /* © */ }
-      2021
+      2022
     </footer>
   );
 }
