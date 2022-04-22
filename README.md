@@ -1,6 +1,10 @@
 # FrankJS.net
+Personal website, built with React, GraphQL, Sass
+
+## Deployment
 [![Netlify Status](https://api.netlify.com/api/v1/badges/50bbc44f-5675-434e-8105-ba1e7c2b2434/deploy-status)](https://app.netlify.com/sites/condescending-jepsen-669694/deploys)
-## builtbyfrank.com/blog Rebuild
+https://frankjs.net
+
 
 ## The Goal
 I have a blog located at my business' website's ./blog.
@@ -19,7 +23,7 @@ update the "blog page" appropriately.
 <br>
 _And the new, deployed site here: (https://frankjs.net/blog)._
 
-## Technology Stack:
+## Technology Stack
 
 | Technology    	| Use           	  | Description     	|
 | :------------------|:-------------------| :----------------	|
@@ -81,3 +85,27 @@ A quick look at the top-level files and directories you'll see in a Gatsby proje
 11. **`package.json`**: A manifest file for Node.js projects, which includes things like metadata (the project’s name, author, etc). This manifest is how npm knows which packages to install for your project.
 
 12. **`README.md`**: A text file containing useful reference information about your project.
+
+## License
+MIT License
+
+Copyright (c) 2015 Frank Santaguida
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
