@@ -38,7 +38,12 @@ _And the new, deployed site here: (https://frankjs.net/blog)._
 |Contentful|headless CMS |content platform|
 
 ## Project Specifications
-
+* Home Page
+* Blog
+* About Me Page
+* What I Use Page
+* Dark Mode functionality
+* contentful-powered blog posts
 
 ## Anatomy of Project
 
