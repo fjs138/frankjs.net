@@ -39,7 +39,7 @@ _And the new, deployed site here: (https://frankjs.net/blog)._
 
 ## Project Specifications
 * Home Page
-* Blog
+* Blog Page
 * About Me Page
 * What I Use Page
 * Dark Mode functionality
