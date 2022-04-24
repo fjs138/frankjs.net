@@ -1,5 +1,5 @@
 # FrankJS.net
-Personal website, built with React, GraphQL, Sass
+Personal website, built with React, GraphQL, Sass.
 
 ## Deployment
 [![Netlify Status](https://api.netlify.com/api/v1/badges/50bbc44f-5675-434e-8105-ba1e7c2b2434/deploy-status)](https://app.netlify.com/sites/condescending-jepsen-669694/deploys)
