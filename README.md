@@ -47,10 +47,6 @@ _And the new, deployed site here: (https://frankjs.net/blog)._
 | src/posts	 			| Markdown Posts (deprecated)     |
 | src/templates| Individual Blog Post Template     |
 
-## What's inside?
-
-A quick look at the top-level files and directories you'll see in a Gatsby project.
-
     .
     ├── node_modules
     ├── src
