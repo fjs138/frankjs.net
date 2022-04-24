@@ -8,8 +8,10 @@ https://frankjs.net
 
 
 ## The Goal
-I have a blog located at my business' website's ./blog.
-I wanted to expand it beyond a blog, and make it a minimal, personal profile of sorts. Overall I was very happy with the continual development capabilities provided to me by Netlify. I decided to use Gatsby for this particular project, as I felt it was a good fit.
+I wanted to relaunch my WordPress blog at builtbyfrank.com on frankjs.net using React.
+I also wanted to enhance it visually, and expand it beyond a blog. It was to be a part of a new minimal, personal profile site.
+Overall I was very happy with the continual development capabilities provided to me by Netlify, and the ease of incorporating Contentful as well.
+I decided to use Gatsby for this particular project, as I felt it was a good fit, and was an excuse to explore something of interest to me.
 
 Initially I developed this to draw data from markdown formatted blog posts. 
 I then created a second branch, "contentful", so that I could develop an iteration that uses a headless cms, in this case
@@ -17,7 +19,7 @@ Netlify, and implements CI/CD.
 This branch was then rebased into the main branch after completion of the feature set.
 <br>
 <br>
-I also added a build hook to my deployment, so that when my Contentful posts are published or unpublished, it will trigger frankjs.net
+I also added a build hook to my deployment, so that when my Contentful posts are published or unpublished, it will instruct frankjs.net to
 update the "blog page" appropriately.
 
 [comment]: <> (_Check out the old site here: &#40;https://builtbyfrank.com/blog&#41;._)
