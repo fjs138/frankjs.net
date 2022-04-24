@@ -37,6 +37,9 @@ _And the new, deployed site here: (https://frankjs.net/blog)._
 |react-obfuscate| obfuscate contact info| react component that can be used to obfuscate phone numbers, etc printed on a website.|
 |Contentful|headless CMS |content platform|
 
+## Project Specifications
+
+
 ## Anatomy of Project
 
 
