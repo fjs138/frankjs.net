@@ -4,7 +4,7 @@ import { Link } from 'gatsby';
 import LogRocket from 'logrocket';
 import Layout from '../components/layout';
 import Head from '../components/head';
-import profilePicture from './frankjs-small-min.png';
+import profilePicture from './feathered-min.png';
 
 LogRocket.init('vvy5uo/test');
 
