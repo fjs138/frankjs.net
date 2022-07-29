@@ -29,6 +29,19 @@ body {
   }
 }
 
+.profilePicture{
+  height: 40%;
+  width: 40%;
+}
+
+@media only screen and (max-width: 768px) {
+  .profilePicture{
+    height: 100%;
+    width: 100%;
+  }
+}
+
+
 article,
 aside,
 details,
@@ -651,3 +664,5 @@ pre tt:after {
     font-size: 100%;
   }
 }
+
+

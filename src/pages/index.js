@@ -4,6 +4,7 @@ import { Link } from 'gatsby';
 import LogRocket from 'logrocket';
 import Layout from '../components/layout';
 import Head from '../components/head';
+import profilePicture from './frankjs-small-min.png';
 
 LogRocket.init('vvy5uo/test');
 
@@ -13,7 +14,8 @@ export default function IndexPage() {
       <Head title="Home" />
 
       <h1>./Home</h1>
-      <h2 id="hello">Hello. I'm Frank.</h2>
+      <h2 id="hello">Hi, I'm Frank!</h2>
+      <img className="profilePicture" src={profilePicture}/>
       <div id="greet">
         A software engineer living in Philadelphia, I am currently available for
         hire.
