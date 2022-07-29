@@ -29,18 +29,17 @@ body {
   }
 }
 
-.profilePicture{
+.profilePicture {
   height: 40%;
   width: 40%;
 }
 
 @media only screen and (max-width: 768px) {
-  .profilePicture{
+  .profilePicture {
     height: 100%;
     width: 100%;
   }
 }
-
 
 article,
 aside,
@@ -665,17 +664,6 @@ pre tt:after {
   }
 }
 
-
-
-
-
-
-
-
-
-
-
-
 .imessage {
   display: flex;
   flex-direction: column;
@@ -690,7 +678,7 @@ pre tt:after {
   border-radius: 1.15rem;
   line-height: 1.25;
   max-width: 75%;
-  padding: 0.5rem .875rem;
+  padding: 0.5rem 0.875rem;
   position: relative;
   word-wrap: break-word;
 }
@@ -709,21 +697,6 @@ p.from-me {
   color: #fff;
 }
 
-p.from-me::before {
-  border-bottom-left-radius: 0.8rem 0.7rem;
-  border-right: 1rem solid #248bf5;
-  right: -0.35rem;
-  transform: translate(0, -0.1rem);
-}
-
-p.from-me::after {
-  background-color: #e9e9e9;
-  border-bottom-left-radius: 0.5rem;
-  right: -40px;
-  transform:translate(-30px, -2px);
-  width: 10px;
-}
-
 p[class^="from-"] {
   margin: 0.5rem 0;
   width: fit-content;
@@ -739,27 +712,6 @@ p.from-me ~ p.from-me:not(:last-child) {
 
 p.from-me ~ p.from-me:last-child {
   margin-bottom: 0.5rem;
-}
-
-p.from-them {
-  align-items: flex-start;
-  background-color: #e5e5ea;
-  color: #000;
-}
-
-p.from-them:before {
-  border-bottom-right-radius: 0.8rem 0.7rem;
-  border-left: 1rem solid #e5e5ea;
-  left: -0.35rem;
-  transform: translate(0, -0.1rem);
-}
-
-p.from-them::after {
-  background-color: #fff;
-  border-bottom-right-radius: 0.5rem;
-  left: 20px;
-  transform: translate(-30px, -2px);
-  width: 10px;
 }
 
 p[class^="from-"].emoji {
@@ -787,30 +739,14 @@ p[class^="from-"].emoji::before {
   margin-top: 1rem !important;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 /* general styling */
 @font-face {
   font-family: "SanFrancisco";
-  src:
-          url("https://cdn.rawgit.com/AllThingsSmitty/fonts/25983b71/SanFrancisco/sanfranciscodisplay-regular-webfont.woff2") format("woff2"),
-          url("https://cdn.rawgit.com/AllThingsSmitty/fonts/25983b71/SanFrancisco/sanfranciscodisplay-regular-webfont.woff") format("woff");
+  src: url("https://cdn.rawgit.com/AllThingsSmitty/fonts/25983b71/SanFrancisco/sanfranciscodisplay-regular-webfont.woff2")
+      format("woff2"),
+    url("https://cdn.rawgit.com/AllThingsSmitty/fonts/25983b71/SanFrancisco/sanfranciscodisplay-regular-webfont.woff")
+      format("woff");
 }
-
-
-
-
 
 @media screen and (max-width: 800px) {
   body {
