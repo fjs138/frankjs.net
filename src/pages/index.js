@@ -16,15 +16,13 @@ export default function IndexPage() {
       <h1>./Home</h1>
       {/*<h2 id="hello">Hi, I'm Frank!</h2>*/}
 
-
       <div className={"imessage disabledSelect"}>
-
         <p className="from-me">Hi, I'm Frank!</p>
-
       </div>
 
 
       <img className={"profilePicture disabledSelect"} src={profilePicture}/>
+
       <div id="greet">
         A software engineer living in Philadelphia, I am currently available for
         hire.
