@@ -74,9 +74,8 @@ template {
 }
 a {
   background-color: transparent;
-  -webkit-text-decoration-skip: objects;
-  //text-decoration: none;
   text-decoration-color: #ff9800;
+  cursor: default;
 }
 a:active,
 a:hover {
@@ -90,12 +89,11 @@ a:hover {
 abbr[title] {
   border-bottom: none;
   text-decoration: underline;
-  text-decoration: underline dotted;
+  //text-decoration: underline dotted;
 }
 b,
 strong {
   font-weight: inherit;
-  font-weight: bolder;
 }
 dfn {
   font-style: italic;
