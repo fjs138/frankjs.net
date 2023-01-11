@@ -31,7 +31,7 @@
     "gatsby-remark-relative-images": "^2.0.2",
     "gatsby-source-contentful": "^4.1.0",
     "gatsby-source-filesystem": "^2.6.0",
-    "gatsby-transformer-remark": "^2.11.0",
+    "gatsby-transformer-remark": "^5.25.1",
     "logrocket": "^1.0.14",
     "react": "^16.14.0",
     "react-dom": "^16.14.0",
