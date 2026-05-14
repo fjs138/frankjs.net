@@ -18,7 +18,6 @@ export default function UsesPage() {
             WebStorm
           </a>
         </s>{' '}
-        and have fully switched to{' '}
         <a href="https://cursor.sh" target="_blank" rel="noreferrer">
           Cursor
         </a>{' '}
@@ -34,15 +33,17 @@ export default function UsesPage() {
       </p>
 
       <p>
-        Almost everything I build deploys through{' '}
+        I prefer{' '}
         <a href="https://vercel.com" rel="noreferrer" target="_blank">
           Vercel
         </a>{' '}
-        and{' '}
-        <a href="https://netlify.com" rel="noreferrer" target="_blank">
-          Netlify
-        </a>{' '}
-        for CI/CD.
+        for CI/CD, after previously using{' '}
+        <s>
+          <a href="https://netlify.com" rel="noreferrer" target="_blank">
+            Netlify
+          </a>
+        </s>
+        .
       </p>
 
       <p>
@@ -50,71 +51,13 @@ export default function UsesPage() {
         <a href="https://mermaid.js.org" target="_blank" rel="noreferrer">
           Mermaid
         </a>{' '}
-        for diagrams, system design visuals, and architecture schematics.
-      </p>
-
-      <p>
-        I am currently exploring{' '}
-        <a
-          href="https://airbnb.io/javascript/"
-          target="_blank"
-          rel="noreferrer"
-        >
-          Airbnb's
-        </a>{' '}
-        and{' '}
-        <a
-          href="https://google.github.io/styleguide/jsguide.html"
-          target="_blank"
-          rel="noreferrer"
-        >
-          Google's
-        </a>{' '}
-        style guides. I also use{' '}
-        <a href="https://www.eslint.org" rel="noreferrer" target="_blank">
-          ESLint
-        </a>{' '}
-        and{' '}
-        <a href="https://www.prettier.io" rel="noreferrer" target="_blank">
-          Prettier
-        </a>
-        .
+        for diagrams, system design documentation, and architecture schematics.
       </p>
 
       <p>
         While I continue to use Windows regularly, I greatly prefer <em>nix</em>{' '}
         systems.
       </p>
-
-      <h3>📅️ Productivity</h3>
-      <ul>
-        <li>
-          <a
-            href="https://www.microsoft.com/edge"
-            target="_blank"
-            rel="noreferrer"
-          >
-            Edge
-          </a>{' '}
-          (Browser)
-        </li>
-        <li>
-          <a href="https://culturedcode.com" target="_blank" rel="noreferrer">
-            Things
-          </a>{' '}
-          (GTD)
-        </li>
-        <li>
-          <a
-            href="https://www.microsoft.com/office"
-            target="_blank"
-            rel="noreferrer"
-          >
-            Office
-          </a>{' '}
-          (Office)
-        </li>
-      </ul>
 
       <h3>📱 Gear</h3>
       <ul>
