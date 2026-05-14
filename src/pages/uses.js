@@ -9,65 +9,52 @@ export default function UsesPage() {
       <Head title="Uses" />
       <h1 className="page-title">./Uses</h1>
       <h2>What I use in my daily workflow:</h2>
+
       <h3>🔧 Development</h3>
       <p>
-        I use
-        {' '}
-        <a href="https://www.jetbrains.com" target="_blank" rel="noreferrer">
-          {' '}
-          WebStorm
-        </a>
-        {' '}
-        as my IDE, with
-        {' '}
+        I use{' '}
+        <s>
+          <a href="https://www.jetbrains.com" target="_blank" rel="noreferrer">
+            WebStorm
+          </a>
+        </s>{' '}
+        and have fully switched to{' '}
+        <a href="https://cursor.sh" target="_blank" rel="noreferrer">
+          Cursor
+        </a>{' '}
+        as my primary IDE, using the{' '}
         <a
-          href="https://binaryify.github.io/OneDark-Pro/#/?id=about"
+          href="https://marketplace.visualstudio.com/items?itemName=ahmadawais.shades-of-purple"
           target="_blank"
           rel="noreferrer"
         >
-          One Dark
-        </a>
-        {' '}
-        as my color scheme.
+          Shades of Purple
+        </a>{' '}
+        theme.
       </p>
-        <p>
-          Almost everything I code uses
-          {' '}
-          <a href="https://git-scm.com/">git</a>
-          {' '}
-          for version control. I use <a href="https://heroku.com" rel="noreferrer" target="_blank">
-          {' '}
-          Heroku
-          {' '}
-        </a> and <a href="https://netlify.com" rel="noreferrer" target="_blank">
-          {' '}
-          Netlify
-          {' '}
-        </a> for CI/CD.
-        </p>
-<p>
-        For light editing I like
-        {' '}
-        <a
-          href="https://code.visualstudio.com/"
-          rel="noreferrer"
-          target="_blank"
-        >
-          Visual Studio Code
-        </a>
-        {' '}
-        and <a
-  href="https://sublimetext.com/"
-  rel="noreferrer"
-  target="_blank"
->
-          Sublime Text
 
-            </a>.
-</p>
       <p>
-        I am currently exploring
-        {' '}
+        Almost everything I build deploys through{' '}
+        <a href="https://vercel.com" rel="noreferrer" target="_blank">
+          Vercel
+        </a>{' '}
+        and{' '}
+        <a href="https://netlify.com" rel="noreferrer" target="_blank">
+          Netlify
+        </a>{' '}
+        for CI/CD.
+      </p>
+
+      <p>
+        I use{' '}
+        <a href="https://mermaid.js.org" target="_blank" rel="noreferrer">
+          Mermaid
+        </a>{' '}
+        for diagrams, system design visuals, and architecture schematics.
+      </p>
+
+      <p>
+        I am currently exploring{' '}
         <a
           href="https://airbnb.io/javascript/"
           target="_blank"
@@ -81,19 +68,24 @@ export default function UsesPage() {
           target="_blank"
           rel="noreferrer"
         >
-          Google's</a> style guides.  I also use
-        {' '}
+          Google's
+        </a>{' '}
+        style guides. I also use{' '}
         <a href="https://www.eslint.org" rel="noreferrer" target="_blank">
-          ESLint{' '}
+          ESLint
+        </a>{' '}
+        and{' '}
+        <a href="https://www.prettier.io" rel="noreferrer" target="_blank">
+          Prettier
         </a>
-         and <a href="https://www.prettier.io" rel="noreferrer" target="_blank">
-        Prettier
-      </a>.
+        .
       </p>
+
       <p>
-        While I continue to use Windows regularly, I greatly prefer *nix
+        While I continue to use Windows regularly, I greatly prefer <em>nix</em>{' '}
         systems.
       </p>
+
       <h3>📅️ Productivity</h3>
       <ul>
         <li>
@@ -102,25 +94,15 @@ export default function UsesPage() {
             target="_blank"
             rel="noreferrer"
           >
-            {' '}
             Edge
-          </a>
-          {' '}
+          </a>{' '}
           (Browser)
         </li>
         <li>
           <a href="https://culturedcode.com" target="_blank" rel="noreferrer">
             Things
-          </a>
-          {' '}
+          </a>{' '}
           (GTD)
-        </li>
-        <li>
-          <a href="https://evernote.com" target="_blank" rel="noreferrer">
-            Evernote
-          </a>
-          {' '}
-          (Notes)
         </li>
         <li>
           <a
@@ -128,22 +110,18 @@ export default function UsesPage() {
             target="_blank"
             rel="noreferrer"
           >
-            {' '}
             Office
-          </a>
-          {' '}
+          </a>{' '}
           (Office)
         </li>
       </ul>
 
       <h3>📱 Gear</h3>
       <ul>
-        <li>MacBook Pro 16" (2019)</li>
-        <li>Watch (S4, Stainless Steel)</li>
-        <li>iPhone (11)</li>
-        <li>iPad (6th)</li>
-        <li>Magic Keyboard & Mouse (1st)</li>
-        <li>Airpods Pro</li>
+        <li>MacBook Pro M5 Pro 16" (2026)</li>
+        <li>iPhone (Air)</li>
+        <li>MX Keys Mini Wireless Keyboard + MX Mouse | Logitech</li>
+        <li>Beats Studio Pro Headphones</li>
         <li>Micca PB42X Speakers</li>
         <li>Audio-Technica AT2020 Microphone</li>
         <li>Logitech C920 HD Pro Camera</li>
