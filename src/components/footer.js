@@ -16,14 +16,10 @@ export default function Footer() {
       }
     }
   `);
+
   return (
     <footer className={footerStyles.footer}>
-
-      {''}
-      {data.site.siteMetadata.author}
-      ,{' '}
-      { /* © */ }
-      2022
+      {data.site.siteMetadata.author}, {new Date().getFullYear()}
     </footer>
   );
 }
