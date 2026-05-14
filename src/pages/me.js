@@ -10,12 +10,12 @@ export default function MePage() {
       <h1>./Me</h1>
 
       <h3>
-        ☎️ Phone:{' '}
+        ☎️{' '}
         <Obfuscate tel="267-977-8356" />
       </h3>
 
       <h3>
-        📫 Email:{' '}
+        📫{' '}
         <Obfuscate
           email="fjs138@gmail.com"
           headers={{
@@ -55,7 +55,7 @@ export default function MePage() {
       </h3>
 
       <h3>
-        🤝 Business:{' '}
+        🤝{' '}
         <a target="_blank" rel="noreferrer" href="https://builtbyfrank.com">
           Built By Frank
         </a>
