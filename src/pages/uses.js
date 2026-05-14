@@ -33,18 +33,18 @@ export default function UsesPage() {
       </p>
 
       <p>
-        I prefer{' '}
-        <a href="https://vercel.com" rel="noreferrer" target="_blank">
-          Vercel
-        </a>{' '}
-        for CI/CD, after previously using{' '}
-        <s>
-          <a href="https://netlify.com" rel="noreferrer" target="_blank">
-            Netlify
-          </a>
-        </s>
-        .
-      </p>
+  I prefer using{' '}
+  <s>
+    <a href="https://netlify.com" rel="noreferrer" target="_blank">
+      Netlify
+    </a>
+  </s>{' '}
+  <a href="https://vercel.com" rel="noreferrer" target="_blank">
+    Vercel
+  </a>{' '}
+  for CI/CD.
+</p>
+
 
       <p>
         I use{' '}
