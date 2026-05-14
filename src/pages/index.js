@@ -24,7 +24,7 @@ export default function IndexPage() {
       <img className={"profilePicture disabledSelect"} src={profilePicture}/>
 
       <div id="greet">
-        An AI software engineer from Philadelphia, now based in State College. I am currently available for
+        An AI software engineer from Philadelphia, now based in State College.  <br /> I am currently available for
         hire.
         <br />
         <br />
