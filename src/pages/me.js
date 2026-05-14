@@ -1,20 +1,22 @@
 <h3>
-  ☎️ Phone:{' '}
+  ☎️ Phone:
+  {' '}
   <Obfuscate tel="267-977-8356" />
 </h3>
-
 <h3>
-  📫 Email:{' '}
+  📫 Email:
+  {' '}
   <Obfuscate
     email="fjs138@gmail.com"
     headers={{
       subject: 'Hi Frank!',
+      // cc: 'friend@coston.cool',
     }}
   />
 </h3>
-
 <h3>
-  👔{' '}
+  👔
+  {' '}
   <a
     target="_blank"
     rel="noreferrer"
@@ -23,9 +25,9 @@
     LinkedIn
   </a>
 </h3>
-
 <h3>
-  📝{' '}
+  📝
+  {' '}
   <a
     target="_blank"
     rel="noreferrer"
@@ -34,16 +36,16 @@
     Resume
   </a>
 </h3>
-
 <h3>
-  🤖{' '}
+  🤖
+  {' '}
   <a target="_blank" rel="noreferrer" href="https://github.com/fjs138">
     Github
   </a>
 </h3>
-
 <h3>
-  🤝 Business:{' '}
+  🤝 Business:
+  {' '}
   <a target="_blank" rel="noreferrer" href="https://builtbyfrank.com">
     Built By Frank
   </a>
