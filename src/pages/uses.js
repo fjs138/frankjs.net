@@ -61,8 +61,9 @@ export default function UsesPage() {
 
       <h3>📱 Gear</h3>
       <ul>
-        <li>MacBook Pro M5 Pro 16" (2026)</li>
-        <li>iPhone (Air)</li>
+        <li>MacBook Pro M5 Pro 16" 48GB</li>
+        <li>iPhone Air</li>
+        <li>Apple Watch S10 Ti</li>
         <li>MX Keys Mini Wireless Keyboard + MX Mouse | Logitech</li>
         <li>Beats Studio Pro Headphones</li>
         <li>Micca PB42X Speakers</li>
