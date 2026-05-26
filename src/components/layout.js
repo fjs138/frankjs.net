@@ -1,26 +1,26 @@
-import React from 'react';
-import Header from './header';
-import Footer from './footer';
-import '../styles/index.scss';
-import layoutStyles from './layout.module.scss';
-import { ThemeToggler } from 'gatsby-plugin-dark-mode';
+import React from "react"
+import Header from "./header"
+import Footer from "./footer"
+import "../styles/index.scss"
+import layoutModule from "./layout.module.scss"
+import { cssModule } from "../utils/css-module"
 
-export default function Layout(props) {
+const layoutStyles = cssModule(layoutModule)
+
+export default function Layout({ children }) {
   return (
     <div
       style={{
-        backgroundColor: 'var(--bg)',
-        color: 'var(--textNormal)',
-        // transition: 'color 0.2s ease-out, background 0.2s ease-out',
+        backgroundColor: "var(--bg)",
+        color: "var(--textNormal)",
       }}
       className={layoutStyles.container}
     >
       <div className={layoutStyles.content}>
-        {' '}
         <Header />
-        {props.children}
+        {children}
       </div>
       <Footer />
     </div>
-  );
+  )
 }

@@ -1,14 +1,16 @@
-import React from 'react';
-import { Link, graphql, useStaticQuery } from 'gatsby';
-import { disable } from 'gatsby/dist/schema/infer/inference-metadata';
-import Layout from '../components/layout';
-import blogStyles from './blog.module.scss';
-import Head from '../components/head';
+import React from "react"
+import { Link, graphql, useStaticQuery } from "gatsby"
+import Layout from "../components/layout"
+import blogModule from "./blog.module.scss"
+import { cssModule } from "../utils/css-module"
+import Head from "../components/head"
+
+const blogStyles = cssModule(blogModule)
 
 export default function BlogPage() {
   const data = useStaticQuery(graphql`
     query {
-      allContentfulBlogPost(sort: { fields: publishedDate, order: DESC }) {
+      allContentfulBlogPost(sort: { publishedDate: DESC }) {
         edges {
           node {
             title
@@ -18,7 +20,7 @@ export default function BlogPage() {
         }
       }
     }
-  `);
+  `)
 
   return (
     <Layout>
@@ -26,20 +28,13 @@ export default function BlogPage() {
       <h1>./Blog</h1>
       <ol className={blogStyles.posts}>
         {data.allContentfulBlogPost.edges.map((edge) => (
-          <li className={blogStyles.post}>
+          <li key={edge.node.slug} className={blogStyles.post}>
             <Link to={`/blog/${edge.node.slug}`}>
               <h2>{edge.node.title}</h2>
-{/*
-              <p>{edge.node.publishedDate}</p>
-*/}
             </Link>
           </li>
         ))}
       </ol>
     </Layout>
-  );
+  )
 }
-
-// generate slug for each post  gatsby.md -> gatsby -> /blog/gatsby
-// generate blog post page template
-// generate new page for each post

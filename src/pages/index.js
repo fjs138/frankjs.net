@@ -1,6 +1,5 @@
 import '../styles/index.scss';
 import React from 'react';
-import { Link } from 'gatsby';
 import LogRocket from 'logrocket';
 import Layout from '../components/layout';
 import Head from '../components/head';
@@ -21,7 +20,11 @@ export default function IndexPage() {
       </div>
 
 
-      <img className={"profilePicture disabledSelect"} src={profilePicture}/>
+      <img
+        className="profilePicture disabledSelect"
+        src={profilePicture}
+        alt="Frank Santaguida"
+      />
 
       <div id="greet">
         An AI software engineer from Philadelphia, now based in State College.  <br /> I am currently available for

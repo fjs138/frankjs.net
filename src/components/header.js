@@ -1,11 +1,14 @@
-import React from 'react';
-import { Link, graphql, useStaticQuery } from 'gatsby';
-import './layout.scss';
-import { ThemeToggler } from 'gatsby-plugin-dark-mode';
-import headerStyles from './header.module.scss';
+import React from "react"
+import { Link, graphql, useStaticQuery } from "gatsby"
+import "./layout.scss"
+import ThemeToggle from "./theme-toggle"
+import NavLink from "./nav-link"
+import headerModule from "./header.module.scss"
+import { cssModule } from "../utils/css-module"
+
+const headerStyles = cssModule(headerModule)
 
 export default function Header() {
-  // data from gql api
   const data = useStaticQuery(graphql`
     query {
       site {
@@ -14,7 +17,8 @@ export default function Header() {
         }
       }
     }
-  `); // tagged template literal
+  `)
+
   return (
     <header className={`${headerStyles.header} sticky-top`}>
       <h1>
@@ -25,70 +29,46 @@ export default function Header() {
       <nav>
         <ul className={headerStyles.navList}>
           <li>
-            <Link
+            <NavLink
               className={headerStyles.navItem}
-              to="/"
               activeClassName={headerStyles.activeNavItem}
+              to="/"
             >
               🏠 Home
-            </Link>
+            </NavLink>
           </li>
-          {' '}
           <li>
-            {/* <Link */}
-            {/*  className={headerStyles.navItem} */}
-            {/*  to="/about" */}
-            {/*  activeClassName={headerStyles.activeNavItem} */}
-            {/* > */}
-            {/*  📢 Me */}
-            {/* </Link> */}
-          </li>
-          {' '}
-          <li>
-            <Link
+            <NavLink
               className={headerStyles.navItem}
-              to="/blog"
               activeClassName={headerStyles.activeNavItem}
+              to="/blog"
             >
               📝 Blog
-            </Link>
+            </NavLink>
           </li>
-          {' '}
           <li>
-            <Link
+            <NavLink
               className={headerStyles.navItem}
-              to="/me"
               activeClassName={headerStyles.activeNavItem}
+              to="/me"
             >
               👨 Me
-            </Link>
+            </NavLink>
           </li>
           <li>
-            <Link
+            <NavLink
               className={headerStyles.navItem}
-              to="/uses"
               activeClassName={headerStyles.activeNavItem}
+              to="/uses"
             >
               🧰 Uses
-            </Link>
+            </NavLink>
           </li>
           <li>
-            <ThemeToggler>
-              {({ theme, toggleTheme }) => (
-                <label>
-                  <input
-                    type="checkbox"
-                    onChange={(e) => toggleTheme(e.target.checked ? 'dark' : 'light')}
-                    checked={theme === 'dark'}
-                  />
-                  {' '}
-                  Dark mode
-                </label>
-              )}
-            </ThemeToggler>
+            <ThemeToggle />
           </li>
         </ul>
       </nav>
     </header>
-  );
+  )
 }

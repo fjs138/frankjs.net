@@ -1,21 +1,12 @@
-const path = require("path") // nodejs
-// path.basename('/foo/bar/baz/asdf/quux.html');
-//returns 'quux.html'
-// path.basename('/foo/bar/baz/asdf/quux.html', '.html');
-//returns 'quux'
+const path = require("path")
 
-require("dotenv").config({
-  path: `.env.${process.env.NODE_ENV}`,
-})
+require("./load-env")
 
-// generate pages
-module.exports.createPages = async ({ graphql, actions }) => {
-  const { createPage } = actions; // deconstruct from actions
-  // 1 get path to template
-  const blogTemplate = path.resolve("./src/templates/blog.js");
+exports.createPages = async ({ graphql, actions, reporter }) => {
+  const { createPage } = actions
+  const blogTemplate = path.resolve("./src/templates/blog.js")
 
-  // 2 get contentful data
-  const res = await graphql(`
+  const result = await graphql(`
     query {
       allContentfulBlogPost {
         edges {
@@ -27,13 +18,16 @@ module.exports.createPages = async ({ graphql, actions }) => {
     }
   `)
 
-  res.data.allContentfulBlogPost.edges.forEach((edge) => {
-    // 3 create new pages
+  if (result.errors) {
+    reporter.panicOnBuild("Error loading Contentful blog posts", result.errors)
+    return
+  }
+
+  result.data.allContentfulBlogPost.edges.forEach((edge) => {
     createPage({
       component: blogTemplate,
       path: `/blog/${edge.node.slug}`,
       context: {
-        //things we can pass down to the template
         slug: edge.node.slug,
       },
     })
