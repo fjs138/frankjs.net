@@ -17,8 +17,6 @@ const label = cssModule(labelModule)
 const STACK = [
   { name: "TypeScript", href: "https://www.typescriptlang.org" },
   { name: "React", href: "https://react.dev" },
-  { name: "Python", href: "https://www.python.org" },
-  { name: "LLMs & Agents", href: null },
   { name: "Gatsby", href: "https://www.gatsbyjs.com" },
   { name: "GraphQL", href: "https://graphql.org" },
   { name: "Contentful", href: "https://www.contentful.com" },
@@ -100,7 +98,7 @@ export default function IndexPage() {
       </section>
 
       <section className={`${styles.section} page-enter-delay-3`}>
-        <span className={label.label}>Stack</span>
+        <span className={label.label}>Built With</span>
         <ul className={styles.stack}>
           {STACK.map((item) =>
             item.href ? (
