@@ -8,7 +8,7 @@ require("./load-env")
 
 module.exports = {
   siteMetadata: {
-    title: "< FrankJS />",
+    title: "Frank J. Santaguida",
     author: "Frank J Santaguida",
   },
   plugins: [
@@ -34,7 +34,7 @@ module.exports = {
     {
       resolve: "gatsby-plugin-nprogress",
       options: {
-        color: "#FF9800",
+        color: "#0ea5e9",
         showSpinner: false,
       },
     },

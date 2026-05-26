@@ -1,64 +1,53 @@
-body.light {
-  --bg: #e9e9e9;
-  --dropShadow: rgba(0, 0, 0, 0.11);
-  //--bg: #0D40FC;
-  --textNormal: #222;
-  --textTitle: #0D40FD;
-  --textLink: blue;
-  --hr: hsla(0, 0%, 0%, 0.2);
-  background-color: var(--bg);
-  width: 100%;
-}
+@use "../styles/tokens";
 
+body.light,
 body.dark {
-  -webkit-font-smoothing: antialiased;
   width: 100%;
-
-  //--bg: #282d33;
-  //--bg:#1E2327;
-  --bg:#202429;
-  --dropShadow: #e9e9e9;
-  --textNormal: rgba(255, 255, 255, 1);
-  --textTitle: #62CB7D;
-  --textLink: yellow;
-  --hr: hsla(0, 0%, 100%, 0.2);
+  min-height: 100vh;
 }
 
-//.navClean{
-//  background: none;
-//    background-size: auto 6px;
-//    text-decoration: none;
-//}
-
-.page-title{
-  //color: #0D40FD;
-}
-//h1 {
-//  color: #0D40FD;
-//}
-//h1.dark {
-//  //color: #62CB7D; 99,199,144
-//  color: #63c790;
-//}
-
-h1 {
-  color: var(--textTitle);
-//  text-shadow: 3px 3px 0 var(--dropShadow);
-}
-//a:hover{
-//
-//    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg id='squiggle-link' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:ev='http://www.w3.org/2001/xml-events' viewBox='0 0 20 4'%3E%3Cstyle type='text/css'%3E.squiggle{animation:shift .3s linear infinite;}@keyframes shift {from {transform:translateX(0);}to {transform:translateX(-20px);}}%3C/style%3E%3Cpath fill='none' stroke='%23ff9800' stroke-width='2' class='squiggle' d='M0,3.5 c 5,0,5,-3,10,-3 s 5,3,10,3 c 5,0,5,-3,10,-3 s 5,3,10,3'/%3E%3C/svg%3E");
-//    background-position: 0 100%;
-//    background-size: auto 6px;
-//    background-repeat: repeat-x;
-//    text-decoration: none;
-//
-//}
-
-.disabledSelect {
-  user-select: none;
-  -moz-user-select: none;
-  -webkit-user-select: none;
-  -ms-user-select: none;
+// Ambient gradient orbs (fixed background decoration)
+.layout-bg {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  overflow: hidden;
   pointer-events: none;
+
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(80px);
+    opacity: 0.7;
+  }
+
+  &::before {
+    width: 480px;
+    height: 480px;
+    top: -120px;
+    right: -80px;
+    background: var(--orb-1);
+    animation: orb-float 20s ease-in-out infinite;
+  }
+
+  &::after {
+    width: 360px;
+    height: 360px;
+    bottom: -60px;
+    left: -60px;
+    background: var(--orb-2);
+    animation: orb-float 24s ease-in-out infinite reverse;
+  }
+}
+
+@keyframes orb-float {
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+  50% {
+    transform: translate(20px, -20px) scale(1.05);
+  }
 }

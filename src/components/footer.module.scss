@@ -1,3 +1,40 @@
 .footer {
-  margin-top: 2rem;
+  margin-top: auto;
+  padding: var(--space-2xl) 0 var(--space-xl);
+  border-top: 1px solid var(--border);
+}
+
+.inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-md);
+  max-width: var(--max-width);
+  margin: 0 auto;
+  width: 100%;
+}
+
+.copy {
+  margin: 0;
+  font-size: 0.875rem;
+  color: var(--text-subtle);
+}
+
+.links {
+  display: flex;
+  gap: var(--space-lg);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  a {
+    font-size: 0.875rem;
+    color: var(--text-muted);
+    text-decoration: none;
+
+    &:hover {
+      color: var(--accent);
+    }
+  }
 }

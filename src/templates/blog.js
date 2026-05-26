@@ -1,16 +1,20 @@
 import React from "react"
-import { graphql } from "gatsby"
+import { Link, graphql } from "gatsby"
 import { BLOCKS } from "@contentful/rich-text-types"
 import { renderRichText } from "gatsby-source-contentful/rich-text"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import Layout from "../components/layout"
 import Head from "../components/head"
+import blogModule from "./blog.module.scss"
+import { cssModule } from "../utils/css-module"
+
+const styles = cssModule(blogModule)
 
 export const query = graphql`
   query ($slug: String!) {
     contentfulBlogPost(slug: { eq: $slug }) {
       title
-      publishedDate(formatString: "MMMM Do, YYYY")
+      publishedDate(formatString: "MMMM D, YYYY")
       body {
         raw
         references {
@@ -52,8 +56,16 @@ export default function Blog({ data }) {
   return (
     <Layout>
       <Head title={post.title} />
-      <h1>{post.title}</h1>
-      {body}
+      <Link to="/blog" className={`${styles.back} page-enter`}>
+        ← Back to blog
+      </Link>
+      <article>
+        <header className={`${styles.header} page-enter-delay-1`}>
+          <h1 className={styles.title}>{post.title}</h1>
+          <p className={styles.meta}>{post.publishedDate}</p>
+        </header>
+        <div className={`${styles.body} page-enter-delay-2`}>{body}</div>
+      </article>
     </Layout>
   )
 }

@@ -1,37 +1,66 @@
-.posts {
-  list-style: none;
-  margin: 0;
+.header {
+  margin-bottom: var(--space-2xl);
 }
 
-.post {
-  // class selector, targeting elements inside such as a, h2, etc
-  margin: 1rem 0;
-  a {
-    // nested rules, thanks to Sass
-    background: #f4f4f4;
-    color: #000000;
-    display: block;
-    padding: 1rem;
-    text-decoration: none;
-  }
-  a:hover {
-    background: #e4e4e4;
-  }
-  h2 {
+.title {
+  margin: 0 0 var(--space-sm);
+}
+
+.subtitle {
+  margin: 0;
+  color: var(--text-muted);
+}
+
+.section {
+  margin-bottom: var(--space-2xl);
+
+  &:last-child {
     margin-bottom: 0;
   }
+}
+
+.sectionTitle {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text);
+  margin: 0 0 var(--space-md);
+  padding-bottom: var(--space-sm);
+  border-bottom: 1px solid var(--border);
+}
+
+.body {
+  color: var(--text-muted);
+
   p {
-    color: #777777;
-    font-size: 0.8rem;
-    font-style: italic;
+    margin-bottom: var(--space-md);
+  }
+
+  a {
+    font-weight: 500;
+  }
+
+  s {
+    opacity: 0.5;
   }
 }
 
-h3 {
-  margin-top: 2rem;
-  text-decoration: none;
+.gearList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: var(--space-sm);
+
+  @media (min-width: 480px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
-li {
-  clear: left;
+.gearItem {
+  padding: var(--space-md) var(--space-lg);
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  font-size: 0.9375rem;
+  color: var(--text-muted);
 }

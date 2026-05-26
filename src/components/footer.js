@@ -7,7 +7,7 @@ const footerStyles = cssModule(footerModule)
 
 export default function Footer() {
   const data = useStaticQuery(graphql`
-    query {
+    query SiteAuthorFooter {
       site {
         siteMetadata {
           author
@@ -16,9 +16,35 @@ export default function Footer() {
     }
   `)
 
+  const author = data.site.siteMetadata.author
+
   return (
     <footer className={footerStyles.footer}>
-      {data.site.siteMetadata.author}, {new Date().getFullYear()}
+      <div className={footerStyles.inner}>
+        <p className={footerStyles.copy}>
+          © {new Date().getFullYear()} {author}
+        </p>
+        <ul className={footerStyles.links}>
+          <li>
+            <a
+              href="https://github.com/fjs138/frankjs-net"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Source
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://www.linkedin.com/in/franksantaguida/"
+              target="_blank"
+              rel="noreferrer"
+            >
+              LinkedIn
+            </a>
+          </li>
+        </ul>
+      </div>
     </footer>
   )
 }
