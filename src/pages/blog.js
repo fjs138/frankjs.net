@@ -17,7 +17,6 @@ export default function BlogPage() {
           node {
             title
             slug
-            publishedDate(formatString: "MMMM D, YYYY")
           }
         }
       }
@@ -48,7 +47,6 @@ export default function BlogPage() {
                 className={blogStyles.link}
               >
                 <h2>{edge.node.title}</h2>
-                <p className={blogStyles.date}>{edge.node.publishedDate}</p>
               </Link>
             </li>
           ))}
