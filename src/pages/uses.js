@@ -50,7 +50,22 @@ export default function UsesPage() {
             theme.
           </p>
           <p>
-            I deploy with{" "}
+            I also use{" "}
+            <a href="https://cline.bot" target="_blank" rel="noreferrer">
+              Cline
+            </a>
+            ,{" "}
+            <a href="https://claude.com/product/claude-code" target="_blank" rel="noreferrer">
+              Claude Code
+            </a>
+            , and{" "}
+            <a href="https://openclaw.ai/" target="_blank" rel="noreferrer">
+              OpenClaw
+            </a>{" "}
+            depending on my use case.
+          </p> 
+          <p>
+            I generally deploy with{" "}
             <a href="https://vercel.com" target="_blank" rel="noreferrer">
               Vercel
             </a>{" "}
@@ -58,7 +73,7 @@ export default function UsesPage() {
             <a href="https://netlify.com" target="_blank" rel="noreferrer">
               Netlify
             </a>
-            , and document architecture with{" "}
+            , and diagram architecture with{" "}
             <a href="https://mermaid.js.org" target="_blank" rel="noreferrer">
               Mermaid
             </a>

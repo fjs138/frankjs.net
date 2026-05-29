@@ -55,7 +55,7 @@ export default function IndexPage() {
               <em>AI software engineer</em> building thoughtful products
             </h1>
             <p className={`${styles.lead} page-enter-delay-2`}>
-              Philadelphia-born, based in State College. I design and ship
+              From Philadelphia, currently in State College. I design and ship
               intelligent software—from LLM-powered workflows to polished web
               experiences.
             </p>
