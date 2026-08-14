@@ -1,122 +1,168 @@
-# FrankJS.net
-Personal website, built with React, GraphQL, Sass
+<h1 align="center">frankjs.net</h1>
 
-## Deployment
-[![Netlify Status](https://api.netlify.com/api/v1/badges/50bbc44f-5675-434e-8105-ba1e7c2b2434/deploy-status)](https://app.netlify.com/sites/condescending-jepsen-669694/deploys)
+<p align="center">
+  Personal site and technical blog — a statically generated Gatsby application
+  sourcing content from a headless CMS, with incremental rebuilds triggered by
+  publish webhooks.
+</p>
 
-https://frankjs.net
+<p align="center">
+  <a href="https://frankjs.net"><strong>frankjs.net</strong></a>
+</p>
 
+<p align="center">
+  <img alt="React" src="https://img.shields.io/badge/React-61DAFB?logo=react&logoColor=black">
+  <img alt="Gatsby" src="https://img.shields.io/badge/Gatsby-663399?logo=gatsby&logoColor=white">
+  <img alt="GraphQL" src="https://img.shields.io/badge/GraphQL-E10098?logo=graphql&logoColor=white">
+  <img alt="Contentful" src="https://img.shields.io/badge/Contentful-2478CC?logo=contentful&logoColor=white">
+  <img alt="Netlify" src="https://img.shields.io/badge/Netlify-00C7B7?logo=netlify&logoColor=white">
+</p>
 
-## The Goal
-I wanted to relaunch a WordPress blog using React.
-I shutdown the blog portion of my business website, and created a new personal website using React. I recreated my blog as part of this new React site.
+---
 
-I wanted to enhance it visually and, as mentioned, expand it beyond a blog.
+## Why
 
-Overall I was very happy with the continual development capabilities provided to me by Netlify, and the ease of incorporating Contentful as well.
+I had a WordPress blog attached to my business site and wanted out of it — off
+PHP, off a database, and onto something I could deploy from a git push.
 
-I decided to use Gatsby for this particular project, as I felt it was a good fit, and was an excuse to explore something of interest to me.
+Rather than migrate WordPress, I rebuilt the site in React as a static
+application and folded the blog into it as one section rather than the whole
+premise. The result loads as flat files, has no runtime database, and costs
+nothing to host.
 
-Initially I developed this to draw data from markdown formatted blog posts. 
+## What It Does
 
-I then created a second branch, "contentful", so that I could develop an iteration that uses a headless cms, in this case
-Netlify, and implements CI/CD.
+- Statically generates every page at build time — no server, no runtime database
+- Sources blog posts from Contentful and renders them through a shared template
+- Rebuilds automatically when a post is published or unpublished in the CMS
+- Serves a home page, blog index, contact page, and a "uses" page
+- Supports light and dark mode
+- Obfuscates contact details against scrapers while rendering them normally
 
-This branch was then rebased into the main branch after completion of the feature set.
-<br>
-<br>
-I also added a build hook to my deployment, so that when my Contentful posts are published or unpublished, it will instruct frankjs.net to
-update the "blog page" appropriately.
+## Architecture
 
+```
+   ┌──────────────┐   publish/unpublish   ┌──────────────────┐
+   │  Contentful  │ ───── webhook ──────► │  Netlify build   │
+   │  (headless)  │                       │  hook            │
+   └──────┬───────┘                       └────────┬─────────┘
+          │                                        │
+          │ source plugin                          │ triggers
+          ▼                                        ▼
+   ┌─────────────────────────────────────────────────────────┐
+   │  Gatsby build                                           │
+   │                                                         │
+   │   gatsby-config.js   plugins + site metadata            │
+   │   gatsby-node.js     createPages() per CMS entry        │
+   │        │                                                │
+   │        ▼                                                │
+   │   internal GraphQL layer  ──►  page queries  ──► HTML   │
+   └─────────────────────────────────────────────────────────┘
+                              │
+                              ▼
+                    static assets on Netlify CDN
+```
 
+Content lives in Contentful. At build time Gatsby's source plugin pulls every
+entry into an internal GraphQL layer, `gatsby-node.js` calls `createPages()` to
+generate one route per post from a shared template, and page-level GraphQL
+queries pull the fields each component renders.
+
+Publishing in Contentful fires a webhook at a Netlify build hook, which triggers
+a rebuild and redeploy. Writing a post requires no repository access and no
+deploy step.
+
+## Content Pipeline
+
+The site was built in two stages, which are visible in the git history:
+
+1. **Markdown** — posts were files in `src/posts/`, sourced by
+   `gatsby-source-filesystem` and transformed by `gatsby-transformer-remark`.
+2. **Headless CMS** — a `contentful` branch reimplemented the same page
+   generation against the Contentful API, then rebased into `master` once the
+   feature set matched.
+
+The markdown path remains in `src/posts/` but is no longer the content source.
 
 ## Technology Stack
 
-| Technology    	| Use           	  | Description     	|
-| :------------------|:-------------------| :----------------	|
-| HTML, CSS, JS 			| Languages     | 	Sass for CSS			  |
-| React	(Gatsby)		| Front-end			  |	JavaScript library for building user interfaces            |
-| GraphQL			| data manipulation			  |	open-source data query and manipulation language for APIs|
-| Logrocket			| monitoring			  |	  lets you replay what users do on your site|
-|react-obfuscate| obfuscate contact info| react component that can be used to obfuscate phone numbers, etc printed on a website.|
-|Contentful|headless CMS |content platform|
+| Technology | Role | Why it's here |
+| :-- | :-- | :-- |
+| React | UI | Component model for pages, layout, and the post template |
+| Gatsby | Static site generator | Build-time rendering, routing, and the data layer that unifies CMS and local sources |
+| GraphQL | Data layer | Gatsby's internal query interface — each page requests only the fields it renders |
+| Contentful | Headless CMS | Post authoring and storage, decoupled from the repository |
+| Sass | Styling | Nested, variable-driven stylesheets, including the dark mode theme |
+| react-obfuscate | Privacy | Renders email and phone normally while defeating naive DOM scrapers |
+| LogRocket | Monitoring | Session replay for diagnosing front-end issues |
+| Netlify | Hosting & CI/CD | Builds on push, deploy previews per branch, and the CMS-triggered build hook |
 
-## Project Specifications
-* Home Page
-* Blog Page
-* About Me Page
-* What I Use Page
-* Dark Mode functionality
-* contentful-powered blog posts
+## Installation
 
-## Anatomy of Project
+Requires Node.js and the Gatsby CLI.
 
+```bash
+git clone https://github.com/fjs138/frankjs.net.git
+cd frankjs.net
+npm install
+```
 
-| File/Folder    	| Purpose           	  |
-| :------------------|:-------------------|
-| src/pages		 			| Main Site Pages|
-| src/components		 			| React Components    |
-| src/posts	 			| Markdown Posts (deprecated)     |
-| src/templates| Individual Blog Post Template     |
+### Configuration
 
-    .
-    ├── node_modules
-    ├── src
-    ├── .gitignore
-    ├── .prettierrc
-    ├── gatsby-browser.js
-    ├── gatsby-config.js
-    ├── gatsby-node.js
-    ├── gatsby-ssr.js
-    ├── LICENSE
-    ├── package-lock.json
-    ├── package.json
-    └── README.md
+Contentful credentials are read from the environment:
 
-1.  **`/node_modules`**: This directory contains all of the modules of code that your project depends on (npm packages) are automatically installed.
+```bash
+# .env.development
+CONTENTFUL_SPACE_ID=your_space_id
+CONTENTFUL_ACCESS_TOKEN=your_delivery_token
+```
 
-2.  **`/src`**: This directory will contain all of the code related to what you will see on the front-end of your site (what you see in the browser) such as your site header or a page template. `src` is a convention for “source code”.
+<!-- CONFIRM: exact variable names in gatsby-config.js before committing. -->
 
-3.  **`.gitignore`**: This file tells git which files it should not track / not maintain a version history for.
+### Running
 
-4.  **`.prettierrc`**: This is a configuration file for [Prettier](https://prettier.io/). Prettier is a tool to help keep the formatting of your code consistent.
+```bash
+npm run develop     # dev server at localhost:8000, GraphiQL at /___graphql
+npm run build       # production build to public/
+npm run serve       # serve the production build locally
+```
 
-5.  **`gatsby-browser.js`**: This file is where Gatsby expects to find any usage of the [Gatsby browser APIs](https://www.gatsbyjs.com/docs/browser-apis/) (if any). These allow customization/extension of default Gatsby settings affecting the browser.
+## Project Structure
 
-6.  **`gatsby-config.js`**: This is the main configuration file for a Gatsby site. This is where you can specify information about your site (metadata) like the site title and description, which Gatsby plugins you’d like to include, etc. (Check out the [config docs](https://www.gatsbyjs.com/docs/gatsby-config/) for more detail).
+| Path | Purpose |
+| :-- | :-- |
+| `src/pages/` | Top-level routes — home, blog index, contact, uses |
+| `src/components/` | Shared React components and layout |
+| `src/templates/` | Blog post template; one page generated per CMS entry |
+| `src/posts/` | Markdown posts from the original implementation (deprecated) |
+| `gatsby-config.js` | Site metadata and plugin configuration |
+| `gatsby-node.js` | `createPages()` — generates a route per post at build time |
+| `gatsby-browser.js` | Browser API hooks |
+| `gatsby-ssr.js` | Server-side rendering hooks |
 
-7.  **`gatsby-node.js`**: This file is where Gatsby expects to find any usage of the [Gatsby Node APIs](https://www.gatsbyjs.com/docs/node-apis/) (if any). These allow customization/extension of default Gatsby settings affecting pieces of the site build process.
+## Design Notes
 
-8.  **`gatsby-ssr.js`**: This file is where Gatsby expects to find any usage of the [Gatsby server-side rendering APIs](https://www.gatsbyjs.com/docs/ssr-apis/) (if any). These allow customization of default Gatsby settings affecting server-side rendering.
+**Why static generation.** The site is read-only from a visitor's perspective.
+Rendering at build time removes the server, the database, and the attack surface
+that comes with both, and reduces hosting to static file delivery.
 
-9.  **`LICENSE`**: This Gatsby starter is licensed under the 0BSD license. This means that you can see this file as a placeholder and replace it with your own license.
+**Why a headless CMS over markdown.** Markdown posts required a commit and a
+push to publish, which meant writing was gated behind a development environment.
+Contentful decouples authoring from deployment while keeping the rendered output
+static.
 
-10. **`package-lock.json`** (See `package.json` below, first). This is an automatically generated file based on the exact versions of your npm dependencies that were installed for your project. **(You won’t change this file directly).**
+**Why keep the deprecated markdown source.** `src/posts/` and the transformer
+config document the earlier approach and make the migration legible in history.
 
-11. **`package.json`**: A manifest file for Node.js projects, which includes things like metadata (the project’s name, author, etc). This manifest is how npm knows which packages to install for your project.
-
-12. **`README.md`**: A text file containing useful reference information about your project.
+**Why obfuscate contact details.** Publishing a plain `mailto:` on an indexed
+page guarantees scraping. `react-obfuscate` reverses the string in the DOM and
+restores it visually with CSS, which defeats naive harvesters at no cost to a
+human reader.
 
 ## License
-MIT License
 
-Copyright (c) 2020 Frank Santaguida
+BSD Zero Clause — see [LICENSE](LICENSE).
 
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
-
+<!-- NOTE: the previous README pasted full MIT license text, which contradicted
+     the repo's actual 0BSD license (inherited from the Gatsby starter).
+     Decide which you want, then make the LICENSE file and this line agree. -->
