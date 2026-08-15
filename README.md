@@ -2,8 +2,8 @@
 
 <p align="center">
   Personal site and technical blog — a statically generated Gatsby application
-  sourcing content from a headless CMS, with incremental rebuilds triggered by
-  publish webhooks.
+  sourcing content from a headless CMS, with rebuilds triggered by CMS publish
+  webhooks.
 </p>
 
 <p align="center">
@@ -11,11 +11,12 @@
 </p>
 
 <p align="center">
-  <img alt="React" src="https://img.shields.io/badge/React-61DAFB?logo=react&logoColor=black">
-  <img alt="Gatsby" src="https://img.shields.io/badge/Gatsby-663399?logo=gatsby&logoColor=white">
-  <img alt="GraphQL" src="https://img.shields.io/badge/GraphQL-E10098?logo=graphql&logoColor=white">
+  <img alt="Gatsby 5" src="https://img.shields.io/badge/Gatsby-5.14-663399?logo=gatsby&logoColor=white">
+  <img alt="React 18" src="https://img.shields.io/badge/React-18.3-61DAFB?logo=react&logoColor=black">
+  <img alt="Sass" src="https://img.shields.io/badge/Sass-CC6699?logo=sass&logoColor=white">
   <img alt="Contentful" src="https://img.shields.io/badge/Contentful-2478CC?logo=contentful&logoColor=white">
   <img alt="Netlify" src="https://img.shields.io/badge/Netlify-00C7B7?logo=netlify&logoColor=white">
+  <img alt="Node 18+" src="https://img.shields.io/badge/Node-%3E%3D18-339933?logo=nodedotjs&logoColor=white">
 </p>
 
 ---
@@ -27,7 +28,7 @@ PHP, off a database, and onto something I could deploy from a git push.
 
 Rather than migrate WordPress, I rebuilt the site in React as a static
 application and folded the blog into it as one section rather than the whole
-premise. The result loads as flat files, has no runtime database, and costs
+premise. The result ships as flat files, has no runtime database, and costs
 nothing to host.
 
 ## What It Does
@@ -35,9 +36,10 @@ nothing to host.
 - Statically generates every page at build time — no server, no runtime database
 - Sources blog posts from Contentful and renders them through a shared template
 - Rebuilds automatically when a post is published or unpublished in the CMS
-- Serves a home page, blog index, contact page, and a "uses" page
-- Supports light and dark mode
+- Serves home, blog index, contact, and "uses" pages, plus a 404
+- Supports light and dark mode with the preference persisted client-side
 - Obfuscates contact details against scrapers while rendering them normally
+- Processes images through Gatsby's sharp pipeline for responsive, lazy-loaded output
 
 ## Architecture
 
@@ -47,7 +49,7 @@ nothing to host.
    │  (headless)  │                       │  hook            │
    └──────┬───────┘                       └────────┬─────────┘
           │                                        │
-          │ source plugin                          │ triggers
+          │ gatsby-source-contentful               │ triggers
           ▼                                        ▼
    ┌─────────────────────────────────────────────────────────┐
    │  Gatsby build                                           │
@@ -57,49 +59,71 @@ nothing to host.
    │        │                                                │
    │        ▼                                                │
    │   internal GraphQL layer  ──►  page queries  ──► HTML   │
+   │                                                         │
+   │   sharp pipeline  ──►  responsive image variants        │
    └─────────────────────────────────────────────────────────┘
                               │
                               ▼
                     static assets on Netlify CDN
 ```
 
-Content lives in Contentful. At build time Gatsby's source plugin pulls every
-entry into an internal GraphQL layer, `gatsby-node.js` calls `createPages()` to
-generate one route per post from a shared template, and page-level GraphQL
-queries pull the fields each component renders.
+Content lives in Contentful. At build time `gatsby-source-contentful` pulls every
+entry into Gatsby's internal GraphQL layer, `gatsby-node.js` generates one route
+per post from `src/templates/blog.js`, and page-level GraphQL queries pull only
+the fields each component renders. Post bodies come through as Contentful rich
+text and are rendered by `@contentful/rich-text-react-renderer`.
 
 Publishing in Contentful fires a webhook at a Netlify build hook, which triggers
 a rebuild and redeploy. Writing a post requires no repository access and no
 deploy step.
 
-## Content Pipeline
+### Styling
 
-The site was built in two stages, which are visible in the git history:
+Styling is Sass with CSS Modules, organized in three layers:
 
-1. **Markdown** — posts were files in `src/posts/`, sourced by
-   `gatsby-source-filesystem` and transformed by `gatsby-transformer-remark`.
+| Layer | Location | Purpose |
+| :-- | :-- | :-- |
+| Tokens | `src/styles/tokens.scss` | Colors, spacing, and type scale as custom properties — the single source both themes read from |
+| Primitives | `src/components/ui/` | `button`, `badge`, `card`, `section-label` as scoped CSS Modules |
+| Composition | `src/pages/*.module.scss` | Page-level layout consuming the primitives |
+
+Dark mode is a `use-theme` hook toggling a data attribute on the document root.
+Because both themes resolve against the same token custom properties, theming is
+a variable swap rather than a parallel stylesheet.
+
+### Content pipeline history
+
+The site was built in two stages, visible in the git history:
+
+1. **Markdown** — posts were files in `src/posts/`, sourced from the filesystem
+   and transformed by remark.
 2. **Headless CMS** — a `contentful` branch reimplemented the same page
    generation against the Contentful API, then rebased into `master` once the
    feature set matched.
 
-The markdown path remains in `src/posts/` but is no longer the content source.
+Three markdown files remain in `src/posts/` as artifacts of the first approach.
+They are no longer part of the build.
 
 ## Technology Stack
 
 | Technology | Role | Why it's here |
 | :-- | :-- | :-- |
-| React | UI | Component model for pages, layout, and the post template |
-| Gatsby | Static site generator | Build-time rendering, routing, and the data layer that unifies CMS and local sources |
-| GraphQL | Data layer | Gatsby's internal query interface — each page requests only the fields it renders |
+| Gatsby 5 | Static site generator | Build-time rendering, routing, and the GraphQL layer unifying CMS and local sources |
+| React 18 | UI | Component model for pages, layout, and the post template |
+| GraphQL | Data layer | Gatsby's internal query interface — each page requests only what it renders |
 | Contentful | Headless CMS | Post authoring and storage, decoupled from the repository |
-| Sass | Styling | Nested, variable-driven stylesheets, including the dark mode theme |
-| react-obfuscate | Privacy | Renders email and phone normally while defeating naive DOM scrapers |
+| `@contentful/rich-text-react-renderer` | Content rendering | Maps Contentful rich-text nodes to React components |
+| Sass + CSS Modules | Styling | Token-driven theming with component-scoped class names |
+| `gatsby-plugin-image` / `sharp` | Image pipeline | Responsive variants, lazy loading, and format negotiation at build time |
+| `react-helmet` | Document head | Per-page title and meta tags for SEO |
+| `react-obfuscate` | Privacy | Renders email and phone normally while defeating naive DOM scrapers |
+| `gatsby-plugin-nprogress` | UX | Progress indicator on route transitions |
 | LogRocket | Monitoring | Session replay for diagnosing front-end issues |
 | Netlify | Hosting & CI/CD | Builds on push, deploy previews per branch, and the CMS-triggered build hook |
 
 ## Installation
 
-Requires Node.js and the Gatsby CLI.
+Requires Node.js 18 or newer.
 
 ```bash
 git clone https://github.com/fjs138/frankjs.net.git
@@ -109,7 +133,7 @@ npm install
 
 ### Configuration
 
-Contentful credentials are read from the environment:
+Contentful credentials are read from the environment via `load-env`:
 
 ```bash
 # .env.development
@@ -117,28 +141,33 @@ CONTENTFUL_SPACE_ID=your_space_id
 CONTENTFUL_ACCESS_TOKEN=your_delivery_token
 ```
 
-<!-- CONFIRM: exact variable names in gatsby-config.js before committing. -->
-
 ### Running
 
 ```bash
 npm run develop     # dev server at localhost:8000, GraphiQL at /___graphql
 npm run build       # production build to public/
 npm run serve       # serve the production build locally
+npm run clean       # clear the Gatsby cache
+npm run format      # prettier across js, jsx, json, md, scss
 ```
 
 ## Project Structure
 
 | Path | Purpose |
 | :-- | :-- |
-| `src/pages/` | Top-level routes — home, blog index, contact, uses |
-| `src/components/` | Shared React components and layout |
-| `src/templates/` | Blog post template; one page generated per CMS entry |
-| `src/posts/` | Markdown posts from the original implementation (deprecated) |
+| `src/pages/` | Routes — `index`, `blog`, `me` (contact), `uses`, `404` |
+| `src/templates/blog.js` | Post template; one page generated per CMS entry |
+| `src/components/` | `layout`, `header`, `footer`, `nav-link`, `theme-toggle`, `head` |
+| `src/components/ui/` | Styled primitives — button, badge, card, section-label |
+| `src/hooks/use-theme.js` | Light/dark mode state and persistence |
+| `src/theme/constants.js` | Theme identifiers and defaults |
+| `src/styles/` | `tokens.scss`, `base.scss`, `index.scss` |
+| `src/utils/css-module.js` | CSS Module class-name helper |
+| `src/posts/` | Markdown posts from the original implementation (not built) |
 | `gatsby-config.js` | Site metadata and plugin configuration |
 | `gatsby-node.js` | `createPages()` — generates a route per post at build time |
-| `gatsby-browser.js` | Browser API hooks |
-| `gatsby-ssr.js` | Server-side rendering hooks |
+| `gatsby-browser.js` / `gatsby-ssr.js` | Browser and SSR API hooks |
+| `load-env.js` | Environment loading shared by config and build |
 
 ## Design Notes
 
@@ -147,22 +176,27 @@ Rendering at build time removes the server, the database, and the attack surface
 that comes with both, and reduces hosting to static file delivery.
 
 **Why a headless CMS over markdown.** Markdown posts required a commit and a
-push to publish, which meant writing was gated behind a development environment.
-Contentful decouples authoring from deployment while keeping the rendered output
-static.
+push to publish, which gated writing behind a development environment.
+Contentful decouples authoring from deployment while keeping the output static.
 
-**Why keep the deprecated markdown source.** `src/posts/` and the transformer
-config document the earlier approach and make the migration legible in history.
+**Why design tokens instead of two themes.** A second stylesheet for dark mode
+means every future style change has to be made twice and will eventually drift.
+Resolving both themes against one set of custom properties makes the toggle a
+variable swap.
+
+**Why CSS Modules over a utility framework.** The component count is small and
+the visual language is specific. Scoped modules kept the styles next to the
+components they belong to without adding a build-time class generator.
 
 **Why obfuscate contact details.** Publishing a plain `mailto:` on an indexed
 page guarantees scraping. `react-obfuscate` reverses the string in the DOM and
-restores it visually with CSS, which defeats naive harvesters at no cost to a
-human reader.
+restores it visually with CSS, defeating naive harvesters at no cost to a human
+reader.
 
 ## License
 
-BSD Zero Clause — see [LICENSE](LICENSE).
+MIT © Frank Santaguida — see [LICENSE](LICENSE).
 
-<!-- NOTE: the previous README pasted full MIT license text, which contradicted
-     the repo's actual 0BSD license (inherited from the Gatsby starter).
-     Decide which you want, then make the LICENSE file and this line agree. -->
+<!-- TODO: package.json already declares "license": "MIT", but the LICENSE file
+     in the repo is the Gatsby starter's BSD Zero Clause. Replace LICENSE with
+     MIT text so the three agree. -->
