@@ -5,6 +5,7 @@ import { renderRichText } from "gatsby-source-contentful/rich-text"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import Layout from "../components/layout"
 import Head from "../components/head"
+import { Helmet } from "react-helmet"
 import blogModule from "./blog.module.scss"
 import { cssModule } from "../utils/css-module"
 
@@ -56,6 +57,8 @@ export default function Blog({ data }) {
   return (
     <Layout>
       <Head title={post.title} />
+      {/* noindex — blog is hidden */}
+      <Helmet><meta name="robots" content="noindex, nofollow" /></Helmet>
       <Link to="/blog" className={`${styles.back} page-enter`}>
         ← Back to blog
       </Link>

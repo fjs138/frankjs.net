@@ -5,6 +5,7 @@ import blogModule from "./blog.module.scss"
 import labelModule from "../components/ui/section-label.module.scss"
 import { cssModule } from "../utils/css-module"
 import Head from "../components/head"
+import { Helmet } from "react-helmet"
 
 const blogStyles = cssModule(blogModule)
 const label = cssModule(labelModule)
@@ -28,6 +29,8 @@ export default function BlogPage() {
   return (
     <Layout>
       <Head title="Blog" />
+      {/* noindex — blog is hidden */}
+      <Helmet><meta name="robots" content="noindex, nofollow" /></Helmet>
       <header className={`${blogStyles.header} page-enter`}>
         <span className={label.label}>Writing</span>
         <h1 className={blogStyles.title}>Blog</h1>
