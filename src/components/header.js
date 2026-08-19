@@ -9,7 +9,7 @@ const headerStyles = cssModule(headerModule)
 
 const NAV_ITEMS = [
   { to: "/", label: "Home" },
-  { to: "/blog", label: "Blog" },
+  // { to: "/blog", label: "Blog" },
   { to: "/me", label: "Contact" },
   { to: "/uses", label: "Uses" },
 ]
